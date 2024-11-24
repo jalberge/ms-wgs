@@ -19,12 +19,12 @@ predict.T <- function(model_fit, data){
 }
 
 
-# SIGNATURE ANALYZER ------------------------------------------------------
+# MUTSIG ------------------------------------------------------
 
-l=list.files(path="../data/MUTSIG2CV/", pattern = "*summary_saturation.txt", full.names = TRUE)
+l=list.files(path="../data/_MUTSIG2CV/", pattern = "*summary_saturation.txt", full.names = TRUE)
 saturation.analysis.multiple.runs <- do.call(rbind, lapply(l, read_tsv))
 saturation.analysis <- saturation.analysis.multiple.runs %>%
-  group_by(n_patients) %>%
+  dplyr::group_by(n_patients) %>%
   slice_sample(n=1)
 
 long.saturation.analysis <- saturation.analysis|>

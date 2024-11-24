@@ -1,5 +1,6 @@
 
-setwd('~/Dropbox (Partners HealthCare)/2_Projects/ms-wgs/code/')
+# setwd('~/Dropbox (Partners HealthCare)/2_Projects/ms-wgs/code/') # old laptop
+setwd('~/Partners HealthCare Dropbox/Jean-Baptiste Alberge/2_Projects/ms-wgs/code/') # new laptop
 
 source("utils.R")
 

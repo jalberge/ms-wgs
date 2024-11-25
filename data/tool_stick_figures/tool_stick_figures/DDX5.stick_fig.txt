@@ -1,0 +1,16 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=DDX5; Synonyms=G17P1, HELR, HLR1;	1	614	Name=DDX5; Synonyms=G17P1, HELR, HLR1;	0.7	0.9	0.9	-	-
+domain	ATP.	114	116	ATP.	0.65	0.49	0.45	-	-
+domain	ATP.	138	145	ATP.	0.65	0.49	0.45	-	-
+domain	Transactivation domain.	477	614	Transactivation domain.	0.74	0.52	0.77	-	-
+domain	Q motif.	94	122	Q motif.	0.39	0.38	0.47	-	-
+domain	DEAD box.	248	251	DEAD box.	0.21	0.49	0.69	-	-
+mutation	Frame_Shift_Del	578	578	p.G578fs	1.0	0.0	0.0	square	up
+mutation	Splice_Site	147	147	p.SV147fs	0.6	0.0	0.6	inv_triangle	up
+mutation	Splice_Site	147	147	p.SV147fs	0.6	0.0	0.6	inv_triangle	up
+mutation	Frame_Shift_Ins	466	466	p.A466fs	1.0	0.0	0.0	square	up
+mutation	Frame_Shift_Del	466	466	p.AI466fs	1.0	0.0	0.0	square	up
+mutation	Splice_Site	147	147	p.SV147fs	0.6	0.0	0.6	inv_triangle	up
+mutation	Missense_Mutation	361	361	p.M361I	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	144	144	p.K144E	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	256	256	p.M256K	1.0	1.0	0.0	circle	up

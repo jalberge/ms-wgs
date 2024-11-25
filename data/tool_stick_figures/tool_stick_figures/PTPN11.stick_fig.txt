@@ -1,0 +1,24 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=PTPN11; Synonyms=PTP2C, SHPTP2;	1	597	Name=PTPN11; Synonyms=PTP2C, SHPTP2;	0.7	0.9	0.9	-	-
+domain	Tyrosine-protein phosphatase non-receptor type 11.	2	597	Tyrosine-protein phosphatase non-receptor type 11.	0.78	0.7	0.57	-	-
+domain	Substrate binding. {ECO:0000250}.	463	469	Substrate binding. {ECO:0000250}.	0.47	0.79	0.71	-	-
+mutation	Missense_Mutation	61	61	p.D61Y	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	503	503	p.G503V	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	72	72	p.A72D	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	58	58	p.N58Y	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	69	69	p.E69K	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	502	502	p.S502A	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	69	69	p.E69K	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	76	76	p.E76G	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	502	502	p.S502P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	76	76	p.E76G	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	61	61	p.D61Y	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	76	76	p.E76G	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	76	76	p.E76K	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	72	72	p.A72P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	72	72	p.A72T	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	76	76	p.E76K	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	76	76	p.E76A	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	507	507	p.T507K	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	61	61	p.D61Y	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	76	76	p.E76A	1.0	1.0	0.0	circle	up

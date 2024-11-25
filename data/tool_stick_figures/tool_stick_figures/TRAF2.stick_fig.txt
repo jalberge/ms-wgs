@@ -1,0 +1,22 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=TRAF2; Synonyms=TRAP3;	1	501	Name=TRAF2; Synonyms=TRAP3;	0.7	0.9	0.9	-	-
+domain	TNF receptor-associated factor 2.	2	501	TNF receptor-associated factor 2.	0.31	0.8	0.22	-	-
+domain	Important for interaction with BIRC2 and BIRC3. {ECO:0000250}.	283	293	Important for interaction with BIRC2 and BIRC3. {ECO:0000250}.	0.35	0.21	0.48	-	-
+mutation	Nonsense_Mutation	67	67	p.Q67*	1.0	0.0	0.0	triangle	up
+mutation	Frame_Shift_Del	133	133	p.L133fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	93	93	p.D93H	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	359	359	p.S359*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	406	406	p.H406P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	434	434	p.L434P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	167	167	p.R167Q	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	93	93	p.D93N	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	158	158	p.E158*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	381	381	p.F381L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	389	389	p.K389N	1.0	1.0	0.0	circle	up
+mutation	Splice_Site	89	89	p.S89L	0.6	0.0	0.6	inv_triangle	up
+mutation	Nonsense_Mutation	457	457	p.Q457*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	112	112	p.C112S	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	113	113	p.T113A	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	42	42	p.R42L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	289	289	p.L289P	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	135	135	p.E135*	1.0	0.0	0.0	triangle	up

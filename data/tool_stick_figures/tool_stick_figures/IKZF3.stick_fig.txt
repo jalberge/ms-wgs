@@ -1,0 +1,13 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=IKZF3; Synonyms=ZNFN1A3;	1	509	Name=IKZF3; Synonyms=ZNFN1A3;	0.7	0.9	0.9	-	-
+mutation	Frame_Shift_Del	401	401	p.YQ401fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	254	254	p.L254V	1.0	1.0	0.0	circle	up
+mutation	Silent	130	130	p.F130F	0.8	0.8	0.8	circle	up
+mutation	Silent	128	128	p.I128I	0.8	0.8	0.8	circle	up
+mutation	Silent	390	390	p.D390D	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	213	213	p.Q213H	1.0	1.0	0.0	circle	up
+mutation	Silent	461	461	p.F461F	0.8	0.8	0.8	circle	up
+mutation	Frame_Shift_Ins	480	480	p.F480fs	1.0	0.0	0.0	square	up
+mutation	Frame_Shift_Del	484	484	p.M484fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	213	213	p.Q213H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	259	259	p.L259S	1.0	1.0	0.0	circle	up

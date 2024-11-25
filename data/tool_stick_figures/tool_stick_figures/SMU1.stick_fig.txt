@@ -1,0 +1,13 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=SMU1;	1	513	Name=SMU1;	0.7	0.9	0.9	-	-
+domain	WD40 repeat-containing protein SMU1, N- terminally processed.	2	513	WD40 repeat-containing protein SMU1, N- terminally processed.	0.52	0.49	0.47	-	-
+domain	Required for interaction with IK and with influenza A virus RNA polymerase. {ECO:0000269|PubMed:24945353}.	1	315	Required for interaction with IK and with influenza A virus RNA polymerase. {ECO:0000269|PubMed:24945353}.	0.21	0.21	0.56	-	-
+mutation	Missense_Mutation	437	437	p.S437Y	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	437	437	p.S437F	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	437	437	p.S437P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	196	196	p.V196L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	443	443	p.G443E	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	293	293	p.I293F	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	437	437	p.S437F	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	443	443	p.G443E	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	437	437	p.S437F	1.0	1.0	0.0	circle	up

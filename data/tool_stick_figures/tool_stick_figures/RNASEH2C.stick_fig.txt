@@ -1,0 +1,8 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=RNASEH2C; Synonyms=AYP1;	1	164	Name=RNASEH2C; Synonyms=AYP1;	0.7	0.9	0.9	-	-
+mutation	Missense_Mutation	42	42	p.A42T	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	66	66	p.R66H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	66	66	p.R66H	1.0	1.0	0.0	circle	up
+mutation	Silent	43	43	p.P43P	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	18	18	p.S18C	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	66	66	p.R66H	1.0	1.0	0.0	circle	up

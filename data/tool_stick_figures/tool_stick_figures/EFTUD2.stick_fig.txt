@@ -1,0 +1,16 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=EFTUD2; Synonyms=KIAA0031, SNRP116;	1	972	Name=EFTUD2; Synonyms=KIAA0031, SNRP116;	0.7	0.9	0.9	-	-
+domain	GTP. {ECO:0000255}.	136	143	GTP. {ECO:0000255}.	0.69	0.36	0.52	-	-
+domain	GTP. {ECO:0000255}.	204	208	GTP. {ECO:0000255}.	0.69	0.36	0.52	-	-
+domain	GTP. {ECO:0000255}.	258	261	GTP. {ECO:0000255}.	0.69	0.36	0.52	-	-
+mutation	Frame_Shift_Ins	32	32	p.D32fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	730	730	p.R730H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	751	751	p.P751H	1.0	1.0	0.0	circle	up
+mutation	Silent	479	479	p.T479T	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	730	730	p.R730H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	730	730	p.R730C	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	730	730	p.R730C	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	730	730	p.R730H	1.0	1.0	0.0	circle	up
+mutation	Silent	438	438	p.I438I	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	730	730	p.R730H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	730	730	p.R730H	1.0	1.0	0.0	circle	up

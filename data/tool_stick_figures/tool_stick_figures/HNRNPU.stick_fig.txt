@@ -1,0 +1,21 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=HNRNPU; Synonyms=HNRPU, SAFA, U21.1;	1	825	Name=HNRNPU; Synonyms=HNRPU, SAFA, U21.1;	0.7	0.9	0.9	-	-
+domain	Heterogeneous nuclear ribonucleoprotein U.	2	825	Heterogeneous nuclear ribonucleoprotein U.	0.76	0.36	0.42	-	-
+domain	ATP. {ECO:0000255}.	504	511	ATP. {ECO:0000255}.	0.37	0.52	0.21	-	-
+domain	RNA-binding RGG-box. {ECO:0000269|PubMed:1628625}.	714	739	RNA-binding RGG-box. {ECO:0000269|PubMed:1628625}.	0.66	0.68	0.69	-	-
+mutation	Missense_Mutation	23	23	p.R23P	1.0	1.0	0.0	circle	up
+mutation	Silent	219	219	p.G219G	0.8	0.8	0.8	circle	up
+mutation	Nonsense_Mutation	139	139	p.Q139*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	13	13	p.V13G	1.0	1.0	0.0	circle	up
+mutation	Silent	20	20	p.L20L	0.8	0.8	0.8	circle	up
+mutation	Frame_Shift_Ins	791	791	p.N791fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	31	31	p.K31T	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	31	31	p.K31E	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	475	475	p.F475L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	731	731	p.N731Y	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	337	337	p.E337K	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	800	800	p.Q800*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	37	37	p.R37P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	29	29	p.G29S	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	162	162	p.Q162*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	12	12	p.K12N	1.0	1.0	0.0	circle	up

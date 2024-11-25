@@ -1,0 +1,15 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=CDKN1B; Synonyms=KIP1;	1	198	Name=CDKN1B; Synonyms=KIP1;	0.7	0.9	0.9	-	-
+domain	Nuclear localization signal. {ECO:0000255}.	153	169	Nuclear localization signal. {ECO:0000255}.	0.47	0.78	0.5	-	-
+mutation	Silent	83	83	p.S83S	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	158	158	p.D158N	1.0	1.0	0.0	circle	up
+mutation	Nonstop_Mutation	0	0	p.*0S	0.94	0.62	0	circle	up
+mutation	Nonstop_Mutation	0	0	p.*0L	0.94	0.62	0	circle	up
+mutation	Missense_Mutation	61	61	p.N61K	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	62	62	p.F62C	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	177	177	p.G177S	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	60	60	p.W60*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	61	61	p.N61I	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	80	80	p.E80Q	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	136	136	p.D136fs	1.0	0.0	0.0	square	up
+mutation	Frame_Shift_Ins	178	178	p.S178fs	1.0	0.0	0.0	square	up

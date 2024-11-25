@@ -1,0 +1,26 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=RB1;	1	928	Name=RB1;	0.7	0.9	0.9	-	-
+domain	Retinoblastoma-associated protein.	2	928	Retinoblastoma-associated protein.	0.24	0.6	0.7	-	-
+domain	Pocket; binds T and E1A.	373	771	Pocket; binds T and E1A.	0.56	0.46	0.39	-	-
+domain	Domain A.	373	579	Domain A.	0.23	0.64	0.27	-	-
+domain	Spacer.	580	639	Spacer.	0.65	0.28	0.7	-	-
+domain	Domain B.	640	771	Domain B.	0.26	0.31	0.79	-	-
+domain	Interaction with LIMD1. {ECO:0000269|PubMed:15542589}.	763	928	Interaction with LIMD1. {ECO:0000269|PubMed:15542589}.	0.71	0.28	0.2	-	-
+domain	Domain C; mediates interaction with E4F1. {ECO:0000269|PubMed:10869426}.	771	928	Domain C; mediates interaction with E4F1. {ECO:0000269|PubMed:10869426}.	0.67	0.6	0.64	-	-
+domain	Nuclear localization signal. {ECO:0000305}.	870	876	Nuclear localization signal. {ECO:0000305}.	0.44	0.75	0.53	-	-
+mutation	Nonsense_Mutation	134	134	p.L134*	1.0	0.0	0.0	triangle	up
+mutation	Frame_Shift_Del	677	677	p.EHI677fs	1.0	0.0	0.0	square	up
+mutation	Nonsense_Mutation	691	691	p.E691*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	5	5	p.T5P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	695	695	p.M695R	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	579	579	p.REGPT579fs	1.0	0.0	0.0	square	up
+mutation	Nonsense_Mutation	676	676	p.L676*	1.0	0.0	0.0	triangle	up
+mutation	Nonsense_Mutation	335	335	p.L335*	1.0	0.0	0.0	triangle	up
+mutation	Frame_Shift_Del	502	502	p.TSQ502fs	1.0	0.0	0.0	square	up
+mutation	Nonsense_Mutation	634	634	p.S634*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	483	483	p.H483Y	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	829	829	p.S829*	1.0	0.0	0.0	triangle	up
+mutation	Nonsense_Mutation	289	289	p.K289*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	176	176	p.Q176H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	449	449	p.G449R	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	19	19	p.E19*	1.0	0.0	0.0	triangle	up

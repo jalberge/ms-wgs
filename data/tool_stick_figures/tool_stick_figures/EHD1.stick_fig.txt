@@ -1,0 +1,21 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=EHD1 {ECO:0000312|HGNC:HGNC:3242}; Synonyms=PAST {ECO:0000303|PubMed:9253601}, PAST1 {ECO:0000312|HGNC:HGNC:3242}; ORFNames=CDABP0131;	1	534	Name=EHD1 {ECO:0000312|HGNC:HGNC:3242}; Synonyms=PAST {ECO:0000303|PubMed:9253601}, PAST1 {ECO:0000312|HGNC:HGNC:3242}; ORFNames=CDABP0131;	0.7	0.9	0.9	-	-
+domain	ATP. {ECO:0000269|PubMed:16251358}.	65	72	ATP. {ECO:0000269|PubMed:16251358}.	0.78	0.59	0.24	-	-
+mutation	Missense_Mutation	67	67	p.Y67N	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	25	25	p.L25P	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	132	132	p.F132fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	317	317	p.E317D	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	92	92	p.P92T	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	289	289	p.A289T	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	447	447	p.T447A	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	474	474	p.S474F	1.0	1.0	0.0	circle	up
+mutation	Silent	419	419	p.N419N	0.8	0.8	0.8	circle	up
+mutation	Silent	130	130	p.N130N	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	111	111	p.G111V	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	125	125	p.L125V	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	81	81	p.Q81L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	66	66	p.Q66H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	242	242	p.K242N	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	70	70	p.G70D	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	259	259	p.S259P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	200	200	p.F200L	1.0	1.0	0.0	circle	up

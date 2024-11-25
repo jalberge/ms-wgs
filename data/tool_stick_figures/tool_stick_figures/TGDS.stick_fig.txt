@@ -1,0 +1,10 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=TGDS;	1	350	Name=TGDS;	0.7	0.9	0.9	-	-
+mutation	Missense_Mutation	249	249	p.G249R	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	334	334	p.N334fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	156	156	p.E156K	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	109	109	p.V109L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	289	289	p.V289D	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	286	286	p.E286*	1.0	0.0	0.0	triangle	up
+mutation	Frame_Shift_Ins	288	288	p.W288fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	95	95	p.V95G	1.0	1.0	0.0	circle	up

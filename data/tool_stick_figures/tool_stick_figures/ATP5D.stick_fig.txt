@@ -1,0 +1,8 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=ATP5D;	1	168	Name=ATP5D;	0.7	0.9	0.9	-	-
+domain	ATP synthase subunit delta, mitochondrial.	23	168	ATP synthase subunit delta, mitochondrial.	0.55	0.69	0.68	-	-
+mutation	Missense_Mutation	8	8	p.R8C	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	8	8	p.R8H	1.0	1.0	0.0	circle	up
+mutation	Silent	139	139	p.A139A	0.8	0.8	0.8	circle	up
+mutation	Nonsense_Mutation	136	136	p.K136*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	92	92	p.G92D	1.0	1.0	0.0	circle	up

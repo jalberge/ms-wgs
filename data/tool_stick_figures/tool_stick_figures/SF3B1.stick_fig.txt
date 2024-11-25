@@ -1,0 +1,23 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=SF3B1; Synonyms=SAP155;	1	1304	Name=SF3B1; Synonyms=SAP155;	0.7	0.9	0.9	-	-
+domain	U2AF homology region; mediates interaction with RBM39. {ECO:0000269|PubMed:24795046}.	190	342	U2AF homology region; mediates interaction with RBM39. {ECO:0000269|PubMed:24795046}.	0.3	0.45	0.22	-	-
+domain	Interaction with PPP1R8. {ECO:0000269|PubMed:12105215}.	223	491	Interaction with PPP1R8. {ECO:0000269|PubMed:12105215}.	0.74	0.46	0.25	-	-
+domain	Interaction with SF3B14.	529	568	Interaction with SF3B14.	0.62	0.46	0.58	-	-
+domain	Interaction with PHF5A. {ECO:0000269|PubMed:27720643}.	547	550	Interaction with PHF5A. {ECO:0000269|PubMed:27720643}.	0.57	0.79	0.34	-	-
+domain	Interaction with PHF5A. {ECO:0000269|PubMed:27720643}.	1156	1157	Interaction with PHF5A. {ECO:0000269|PubMed:27720643}.	0.57	0.79	0.34	-	-
+domain	Interaction with SF3B3 and SF3B5. {ECO:0000269|PubMed:27720643}.	1248	1304	Interaction with SF3B3 and SF3B5. {ECO:0000269|PubMed:27720643}.	0.26	0.2	0.5	-	-
+mutation	Missense_Mutation	1118	1118	p.I1118M	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	701	701	p.V701F	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	784	784	p.M784I	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	666	666	p.K666N	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	1202	1202	p.F1202C	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	908	908	p.S908L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	851	851	p.S851C	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	402	402	p.E402K	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	727	727	p.V727L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	938	938	p.W938C	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	666	666	p.K666Q	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	666	666	p.K666T	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	700	700	p.K700E	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	894	894	p.D894H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	666	666	p.K666T	1.0	1.0	0.0	circle	up

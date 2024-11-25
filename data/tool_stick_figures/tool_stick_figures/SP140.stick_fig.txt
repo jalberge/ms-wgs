@@ -1,0 +1,35 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=SP140 {ECO:0000312|HGNC:HGNC:17133}; Synonyms=LYSP100 {ECO:0000303|PubMed:8695863};	1	867	Name=SP140 {ECO:0000312|HGNC:HGNC:17133}; Synonyms=LYSP100 {ECO:0000303|PubMed:8695863};	0.7	0.9	0.9	-	-
+domain	Nuclear localization signal. {ECO:0000255}.	495	514	Nuclear localization signal. {ECO:0000255}.	0.36	0.38	0.4	-	-
+mutation	Silent	477	477	p.A477A	0.8	0.8	0.8	circle	up
+mutation	Frame_Shift_Del	568	568	p.K568fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	640	640	p.W640C	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	454	454	p.C454fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	124	124	p.P124A	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	235	235	p.S235*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	637	637	p.S637L	1.0	1.0	0.0	circle	up
+mutation	Splice_Site	163	163	p.QG163del	0.6	0.0	0.6	inv_triangle	up
+mutation	Frame_Shift_Del	2	2	p.AQQ2fs	1.0	0.0	0.0	square	up
+mutation	Frame_Shift_Ins	670	670	p.K670fs	1.0	0.0	0.0	square	up
+mutation	Nonsense_Mutation	447	447	p.S447*	1.0	0.0	0.0	triangle	up
+mutation	Frame_Shift_Del	548	548	p.R548fs	1.0	0.0	0.0	square	up
+mutation	Nonsense_Mutation	141	141	p.S141*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	153	153	p.D153N	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	724	724	p.E724K	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	524	524	p.S524N	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	179	179	p.Q179*	1.0	0.0	0.0	triangle	up
+mutation	Nonsense_Mutation	211	211	p.E211*	1.0	0.0	0.0	triangle	up
+mutation	Frame_Shift_Del	437	437	p.LYD437fs	1.0	0.0	0.0	square	up
+mutation	Silent	304	304	p.T304T	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	75	75	p.E75K	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	622	622	p.W622*	1.0	0.0	0.0	triangle	up
+mutation	Frame_Shift_Del	453	453	p.KCS453fs	1.0	0.0	0.0	square	up
+mutation	Nonsense_Mutation	649	649	p.W649*	1.0	0.0	0.0	triangle	up
+mutation	In_Frame_Del	848	848	p.A848del	0.0	0.0	1.0	square	up
+mutation	Missense_Mutation	845	845	p.R845T	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	60	60	p.P60S	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Ins	670	670	p.K670fs	1.0	0.0	0.0	square	up
+mutation	Nonsense_Mutation	68	68	p.R68*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	125	125	p.D125V	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	714	714	p.E714*	1.0	0.0	0.0	triangle	up
+mutation	Nonsense_Mutation	849	849	p.E849*	1.0	0.0	0.0	triangle	up

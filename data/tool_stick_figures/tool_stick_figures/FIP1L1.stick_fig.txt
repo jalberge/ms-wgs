@@ -1,0 +1,15 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=FIP1L1; Synonyms=FIP1, RHE;	1	594	Name=FIP1L1; Synonyms=FIP1, RHE;	0.7	0.9	0.9	-	-
+domain	Necessary for stimulating PAPOLA activity.	1	356	Necessary for stimulating PAPOLA activity.	0.67	0.66	0.61	-	-
+domain	Sufficient for interaction with PAPOLA.	1	111	Sufficient for interaction with PAPOLA.	0.21	0.69	0.6	-	-
+domain	Sufficient for interaction with CPSF4. {ECO:0000269|PubMed:14749727}.	137	243	Sufficient for interaction with CPSF4. {ECO:0000269|PubMed:14749727}.	0.3	0.5	0.34	-	-
+domain	Sufficient for interaction with CPSF1 and CSTF3. {ECO:0000269|PubMed:14749727}.	443	594	Sufficient for interaction with CPSF1 and CSTF3. {ECO:0000269|PubMed:14749727}.	0.61	0.67	0.29	-	-
+mutation	Frame_Shift_Del	463	463	p.RE463fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	161	161	p.E161K	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	516	516	p.E516K	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	567	567	p.K567fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	469	469	p.R469K	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	25	25	p.W25*	1.0	0.0	0.0	triangle	up
+mutation	Splice_Site	548	548	p.-548fs	0.6	0.0	0.6	inv_triangle	up
+mutation	Missense_Mutation	503	503	p.E503V	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	269	269	p.P269R	1.0	1.0	0.0	circle	up

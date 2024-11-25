@@ -1,0 +1,11 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=FRMPD2; Synonyms=PDZD5C, PDZK4, PDZK5C;	1	1309	Name=FRMPD2; Synonyms=PDZD5C, PDZK4, PDZK5C;	0.7	0.9	0.9	-	-
+mutation	Missense_Mutation	295	295	p.T295A	1.0	1.0	0.0	circle	up
+mutation	Silent	59	59	p.P59P	0.8	0.8	0.8	circle	up
+mutation	Nonsense_Mutation	527	527	p.W527*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	274	274	p.Q274H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	530	530	p.D530N	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	157	157	p.A157S	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	146	146	p.H146Y	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	2	2	p.Q2*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	397	397	p.D397E	1.0	1.0	0.0	circle	up

@@ -1,0 +1,15 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=HNRNPA2B1; Synonyms=HNRPA2B1;	1	353	Name=HNRNPA2B1; Synonyms=HNRPA2B1;	0.7	0.9	0.9	-	-
+domain	Low complexity (LC) region. {ECO:0000269|PubMed:26544936}.	193	353	Low complexity (LC) region. {ECO:0000269|PubMed:26544936}.	0.7	0.28	0.62	-	-
+domain	Nuclear targeting sequence. {ECO:0000250}.	308	347	Nuclear targeting sequence. {ECO:0000250}.	0.22	0.31	0.41	-	-
+domain	Nuclear localization signal. {ECO:0000255}.	9	15	Nuclear localization signal. {ECO:0000255}.	0.41	0.41	0.6	-	-
+mutation	Silent	37	37	p.L37L	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	266	266	p.R266K	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	49	49	p.D49A	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	228	228	p.R228T	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	304	304	p.G304E	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	108	108	p.H108P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	49	49	p.D49H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	22	22	p.K22R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	189	189	p.S189F	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	49	49	p.D49A	1.0	1.0	0.0	circle	up

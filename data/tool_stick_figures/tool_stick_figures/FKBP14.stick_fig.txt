@@ -1,0 +1,8 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=FKBP14; Synonyms=FKBP22; ORFNames=UNQ322/PRO381;	1	211	Name=FKBP14; Synonyms=FKBP22; ORFNames=UNQ322/PRO381;	0.7	0.9	0.9	-	-
+domain	Peptidyl-prolyl cis-trans isomerase FKBP14.	20	211	Peptidyl-prolyl cis-trans isomerase FKBP14.	0.74	0.27	0.33	-	-
+domain	Prevents secretion from ER. {ECO:0000255|PROSITE-ProRule:PRU10138}.	208	211	Prevents secretion from ER. {ECO:0000255|PROSITE-ProRule:PRU10138}.	0.22	0.43	0.27	-	-
+mutation	Missense_Mutation	32	32	p.L32F	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	40	40	p.R40H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	40	40	p.R40C	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	11	11	p.T11A	1.0	1.0	0.0	circle	up

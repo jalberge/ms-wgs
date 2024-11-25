@@ -1,0 +1,44 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=SETD2; Synonyms=HIF1, HYPB {ECO:0000303|PubMed:16118227}, KIAA1732 {ECO:0000303|PubMed:11214970}, KMT3A {ECO:0000303|PubMed:19332550}, SET2 {ECO:0000303|PubMed:19332550, ECO:0000303|Ref.7}; ORFNames=HSPC069;	1	2564	Name=SETD2; Synonyms=HIF1, HYPB {ECO:0000303|PubMed:16118227}, KIAA1732 {ECO:0000303|PubMed:11214970}, KMT3A {ECO:0000303|PubMed:19332550}, SET2 {ECO:0000303|PubMed:19332550, ECO:0000303|Ref.7}; ORFNames=HSPC069;	0.7	0.9	0.9	-	-
+domain	Interaction with TUBA1A. {ECO:0000269|PubMed:27518565}.	1418	1714	Interaction with TUBA1A. {ECO:0000269|PubMed:27518565}.	0.44	0.58	0.41	-	-
+domain	Inhibitor binding. {ECO:0000269|PubMed:23043551}.	1560	1562	Inhibitor binding. {ECO:0000269|PubMed:23043551}.	0.37	0.32	0.61	-	-
+domain	S-adenosyl-L-methionine binding. {ECO:0000244|PDB:4H12, ECO:0000244|PDB:5JJY, ECO:0000244|PDB:5JLB, ECO:0000244|PDB:5JLE, ECO:0000244|PDB:5V22, ECO:0000269|PubMed:23043551, ECO:0000269|PubMed:27474439, ECO:0000269|PubMed:28256625}.	1560	1562	S-adenosyl-L-methionine binding. {ECO:0000244|PDB:4H12, ECO:0000244|PDB:5JJY, ECO:0000244|PDB:5JLB, ECO:0000244|PDB:5JLE, ECO:0000244|PDB:5V22, ECO:0000269|PubMed:23043551, ECO:0000269|PubMed:27474439, ECO:0000269|PubMed:28256625}.	0.78	0.51	0.69	-	-
+domain	Inhibitor binding. {ECO:0000269|PubMed:23043551}.	1603	1605	Inhibitor binding. {ECO:0000269|PubMed:23043551}.	0.37	0.32	0.61	-	-
+domain	S-adenosyl-L-methionine binding. {ECO:0000244|PDB:4H12, ECO:0000244|PDB:5JJY, ECO:0000244|PDB:5JLB, ECO:0000244|PDB:5JLE, ECO:0000244|PDB:5V22, ECO:0000269|PubMed:23043551, ECO:0000269|PubMed:27474439, ECO:0000269|PubMed:28256625}.	1603	1605	S-adenosyl-L-methionine binding. {ECO:0000244|PDB:4H12, ECO:0000244|PDB:5JJY, ECO:0000244|PDB:5JLB, ECO:0000244|PDB:5JLE, ECO:0000244|PDB:5V22, ECO:0000269|PubMed:23043551, ECO:0000269|PubMed:27474439, ECO:0000269|PubMed:28256625}.	0.78	0.51	0.69	-	-
+domain	Inhibitor binding. {ECO:0000269|PubMed:23043551}.	1628	1629	Inhibitor binding. {ECO:0000269|PubMed:23043551}.	0.37	0.32	0.61	-	-
+domain	S-adenosyl-L-methionine binding. {ECO:0000244|PDB:4H12, ECO:0000244|PDB:5JJY, ECO:0000244|PDB:5JLB, ECO:0000244|PDB:5JLE, ECO:0000244|PDB:5V22, ECO:0000269|PubMed:23043551, ECO:0000269|PubMed:27474439, ECO:0000269|PubMed:28256625}.	1628	1629	S-adenosyl-L-methionine binding. {ECO:0000244|PDB:4H12, ECO:0000244|PDB:5JJY, ECO:0000244|PDB:5JLB, ECO:0000244|PDB:5JLE, ECO:0000244|PDB:5V22, ECO:0000269|PubMed:23043551, ECO:0000269|PubMed:27474439, ECO:0000269|PubMed:28256625}.	0.78	0.51	0.69	-	-
+domain	Low charge region. {ECO:0000269|PubMed:16118227}.	2137	2366	Low charge region. {ECO:0000269|PubMed:16118227}.	0.23	0.36	0.25	-	-
+domain	Interaction with POLR2A. {ECO:0000269|PubMed:16314571}.	2457	2564	Interaction with POLR2A. {ECO:0000269|PubMed:16314571}.	0.7	0.27	0.34	-	-
+mutation	Missense_Mutation	1213	1213	p.P1213L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	1584	1584	p.L1584F	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	1609	1609	p.L1609M	1.0	1.0	0.0	circle	up
+mutation	Silent	1695	1695	p.V1695V	0.8	0.8	0.8	circle	up
+mutation	Frame_Shift_Del	582	582	p.I582fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	2113	2113	p.R2113H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	1636	1636	p.E1636K	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	1562	1562	p.W1562*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	1593	1593	p.V1593L	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	1412	1412	p.ES1412fs	1.0	0.0	0.0	square	up
+mutation	Silent	1646	1646	p.L1646L	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	1357	1357	p.L1357F	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	884	884	p.Q884*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	1616	1616	p.D1616Y	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	2005	2005	p.I2005L	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	1565	1565	p.R1565*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	1934	1934	p.P1934H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	1118	1118	p.E1118K	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	595	595	p.S595*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	1146	1146	p.T1146R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	1533	1533	p.C1533S	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	919	919	p.E919Q	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	2071	2071	p.NK2071fs	1.0	0.0	0.0	square	up
+mutation	Nonsense_Mutation	1588	1588	p.E1588*	1.0	0.0	0.0	triangle	up
+mutation	Frame_Shift_Ins	1831	1831	p.K1831fs	1.0	0.0	0.0	square	up
+mutation	Nonsense_Mutation	1640	1640	p.W1640*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	1968	1968	p.T1968I	1.0	1.0	0.0	circle	up
+mutation	Silent	707	707	p.L707L	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	2292	2292	p.Q2292E	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	1945	1945	p.E1945K	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	1606	1606	p.F1606L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	2199	2199	p.S2199F	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	749	749	p.T749I	1.0	1.0	0.0	circle	up

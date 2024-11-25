@@ -1,0 +1,40 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=MAX; Synonyms=BHLHD4;	1	160	Name=MAX; Synonyms=BHLHD4;	0.7	0.9	0.9	-	-
+domain	Protein max.	2	160	Protein max.	0.32	0.41	0.41	-	-
+domain	Leucine-zipper.	81	102	Leucine-zipper.	0.31	0.77	0.44	-	-
+domain	Nuclear localization signal.	152	156	Nuclear localization signal.	0.21	0.77	0.8	-	-
+mutation	Silent	69	69	p.E69E	0.8	0.8	0.8	circle	up
+mutation	Nonsense_Mutation	33	33	p.R33*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	35	35	p.R35C	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	35	35	p.R35H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	36	36	p.R36W	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	78	78	p.N78fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	35	35	p.R35H	1.0	1.0	0.0	circle	up
+mutation	Start_Codon_SNP	1	1	p.M1I	0.66	0.84	0	circle	up
+mutation	Missense_Mutation	35	35	p.R35L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	36	36	p.R36W	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	60	60	p.R60W	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	36	36	p.R36M	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	36	36	p.R36G	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	35	35	p.R35L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	31	31	p.L31P	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	19	19	p.Q19*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	60	60	p.R60G	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	36	36	p.R36K	1.0	1.0	0.0	circle	up
+mutation	Splice_Site	99	99	p.VP99del	0.6	0.0	0.6	inv_triangle	up
+mutation	Missense_Mutation	71	71	p.I71F	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	75	75	p.R75*	1.0	0.0	0.0	triangle	up
+mutation	Nonsense_Mutation	49	49	p.S49*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	36	36	p.R36S	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	35	35	p.R35L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	38	38	p.H38P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	29	29	p.N29D	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	33	33	p.R33*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	46	46	p.L46W	1.0	1.0	0.0	circle	up
+mutation	Start_Codon_SNP	1	1	p.M1I	0.66	0.84	0	circle	up
+mutation	Missense_Mutation	35	35	p.R35P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	36	36	p.R36G	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	29	29	p.N29Y	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	119	119	p.D119H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	36	36	p.R36W	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	36	36	p.R36W	1.0	1.0	0.0	circle	up

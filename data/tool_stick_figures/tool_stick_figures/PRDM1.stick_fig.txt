@@ -1,0 +1,31 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=PRDM1; Synonyms=BLIMP1;	1	825	Name=PRDM1; Synonyms=BLIMP1;	0.7	0.9	0.9	-	-
+domain	Interaction with PIAS1.	527	574	Interaction with PIAS1.	0.67	0.7	0.2	-	-
+mutation	Frame_Shift_Del	246	246	p.REY246fs	1.0	0.0	0.0	square	up
+mutation	Frame_Shift_Del	708	708	p.GNCAAAPA708fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	674	674	p.L674Q	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	696	696	p.YI696fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	764	764	p.R764K	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	82	82	p.S82F	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	588	588	p.S588C	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	654	654	p.S654P	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	177	177	p.Q177*	1.0	0.0	0.0	triangle	up
+mutation	Nonsense_Mutation	729	729	p.E729*	1.0	0.0	0.0	triangle	up
+mutation	Silent	470	470	p.L470L	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	626	626	p.T626M	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	793	793	p.E793*	1.0	0.0	0.0	triangle	up
+mutation	Silent	74	74	p.G74G	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	626	626	p.T626M	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Ins	721	721	p.E721fs	1.0	0.0	0.0	square	up
+mutation	Frame_Shift_Del	727	727	p.N727fs	1.0	0.0	0.0	square	up
+mutation	Frame_Shift_Del	800	800	p.M800fs	1.0	0.0	0.0	square	up
+mutation	Frame_Shift_Del	801	801	p.K801fs	1.0	0.0	0.0	square	up
+mutation	Frame_Shift_Del	802	802	p.LPPSN802fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	661	661	p.C661Y	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	676	676	p.L676R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	676	676	p.L676R	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	731	731	p.E731fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	710	710	p.C710S	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	680	680	p.L680R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	79	79	p.A79V	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	118	118	p.G118A	1.0	1.0	0.0	circle	up

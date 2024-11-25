@@ -1,0 +1,14 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=RPL5; ORFNames=MSTP030;	1	297	Name=RPL5; ORFNames=MSTP030;	0.7	0.9	0.9	-	-
+domain	60S ribosomal protein L5.	2	297	60S ribosomal protein L5.	0.75	0.66	0.57	-	-
+mutation	Frame_Shift_Del	157	157	p.NK157fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	156	156	p.G156S	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	58	58	p.R58fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	99	99	p.Y99H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	100	100	p.C100F	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	296	296	p.E296K	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	58	58	p.R58fs	1.0	0.0	0.0	square	up
+mutation	Frame_Shift_Ins	16	16	p.Y16fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	169	169	p.G169A	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	154	154	p.TT154fs	1.0	0.0	0.0	square	up
+mutation	Frame_Shift_Del	156	156	p.G156fs	1.0	0.0	0.0	square	up

@@ -1,0 +1,20 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=RFTN1; Synonyms=KIAA0084; ORFNames=MIG2;	1	578	Name=RFTN1; Synonyms=KIAA0084; ORFNames=MIG2;	0.7	0.9	0.9	-	-
+domain	Raftlin.	2	578	Raftlin.	0.61	0.24	0.4	-	-
+mutation	Missense_Mutation	272	272	p.P272A	1.0	1.0	0.0	circle	up
+mutation	Splice_Site	275	275	p.G275G	0.6	0.0	0.6	inv_triangle	up
+mutation	Missense_Mutation	273	273	p.L273P	1.0	1.0	0.0	circle	up
+mutation	Silent	267	267	p.E267E	0.8	0.8	0.8	circle	up
+mutation	Frame_Shift_Del	190	190	p.AKNARGDHASL190fs	1.0	0.0	0.0	square	up
+mutation	Silent	249	249	p.L249L	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	220	220	p.S220I	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	274	274	p.S274*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	255	255	p.S255R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	209	209	p.D209V	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	94	94	p.K94*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	108	108	p.K108R	1.0	1.0	0.0	circle	up
+mutation	Silent	71	71	p.E71E	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	249	249	p.L249P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	190	190	p.A190V	1.0	1.0	0.0	circle	up
+mutation	Silent	163	163	p.P163P	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	249	249	p.L249P	1.0	1.0	0.0	circle	up

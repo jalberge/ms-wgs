@@ -1,0 +1,15 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=SP3;	1	781	Name=SP3;	0.7	0.9	0.9	-	-
+domain	Transactivation domain (Gln-rich).	138	237	Transactivation domain (Gln-rich).	0.8	0.4	0.76	-	-
+domain	Transactivation domain (Gln-rich).	350	499	Transactivation domain (Gln-rich).	0.8	0.4	0.76	-	-
+domain	Repressor domain.	534	620	Repressor domain.	0.39	0.7	0.36	-	-
+mutation	Frame_Shift_Del	614	614	p.N614fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	666	666	p.D666A	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	687	687	p.S687*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	38	38	p.Q38L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	430	430	p.N430K	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	451	451	p.Q451*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	699	699	p.H699R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	666	666	p.D666G	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	674	674	p.T674A	1.0	1.0	0.0	circle	up
+mutation	Silent	117	117	p.T117T	0.8	0.8	0.8	circle	up

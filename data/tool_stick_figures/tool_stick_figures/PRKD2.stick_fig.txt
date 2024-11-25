@@ -1,0 +1,42 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=PRKD2; Synonyms=PKD2; ORFNames=HSPC187;	1	878	Name=PRKD2; Synonyms=PKD2; ORFNames=HSPC187;	0.7	0.9	0.9	-	-
+domain	ATP. {ECO:0000255|PROSITE- ProRule:PRU00159}.	557	565	ATP. {ECO:0000255|PROSITE- ProRule:PRU00159}.	0.22	0.8	0.62	-	-
+domain	Important for ABL1-mediated Tyr-717 phosphorylation. {ECO:0000269|PubMed:28428613}.	724	726	Important for ABL1-mediated Tyr-717 phosphorylation. {ECO:0000269|PubMed:28428613}.	0.44	0.55	0.62	-	-
+mutation	Missense_Mutation	307	307	p.A307T	1.0	1.0	0.0	circle	up
+mutation	Start_Codon_SNP	1	1	p.M1L	0.71	0.6	0	circle	up
+mutation	Start_Codon_SNP	1	1	p.M1L	0.71	0.6	0	circle	up
+mutation	Missense_Mutation	382	382	p.M382I	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	384	384	p.V384E	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	551	551	p.I551S	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	635	635	p.L635M	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	91	91	p.D91N	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	381	381	p.L381P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	707	707	p.F707L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	147	147	p.R147W	1.0	1.0	0.0	circle	up
+mutation	Silent	504	504	p.I504I	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	381	381	p.L381Q	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	384	384	p.V384G	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	224	224	p.R224H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	264	264	p.P264S	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	384	384	p.V384E	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	334	334	p.E334K	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	636	636	p.E636K	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	508	508	p.L508P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	803	803	p.S803R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	166	166	p.G166D	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	550	550	p.Q550E	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	562	562	p.F562C	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	662	662	p.L662F	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	571	571	p.R571W	1.0	1.0	0.0	circle	up
+mutation	In_Frame_Del	582	582	p.ID582del	0.0	0.0	1.0	square	up
+mutation	Missense_Mutation	426	426	p.I426S	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	551	551	p.I551N	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	558	558	p.G558A	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	508	508	p.L508P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	217	217	p.C217Y	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	761	761	p.I761T	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	147	147	p.R147W	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	386	386	p.Q386R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	443	443	p.L443P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	383	383	p.R383T	1.0	1.0	0.0	circle	up
+mutation	Silent	205	205	p.H205H	0.8	0.8	0.8	circle	up

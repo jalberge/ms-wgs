@@ -1,0 +1,32 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=SAMHD1; Synonyms=MOP5;	1	626	Name=SAMHD1; Synonyms=MOP5;	0.7	0.9	0.9	-	-
+domain	dGTP 1.	137	145	dGTP 1.	0.3	0.41	0.29	-	-
+domain	dGTP 2.	352	354	dGTP 2.	0.46	0.27	0.6	-	-
+domain	Substrate binding.	309	315	Substrate binding.	0.57	0.62	0.79	-	-
+domain	Substrate binding.	370	375	Substrate binding.	0.57	0.62	0.79	-	-
+mutation	Splice_Site	171	171	p.V171M	0.6	0.0	0.6	inv_triangle	up
+mutation	Missense_Mutation	541	541	p.L541V	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	480	480	p.V480A	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	299	299	p.E299K	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	186	186	p.Q186*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	361	361	p.D361V	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	149	149	p.Q149H	1.0	1.0	0.0	circle	up
+mutation	Start_Codon_SNP	1	1	p.M1I	0.61	0.63	0	circle	up
+mutation	Missense_Mutation	475	475	p.S475Y	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	372	372	p.R372T	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	159	159	p.G159A	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	109	109	p.Q109*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	264	264	p.D264H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	166	166	p.E166Q	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	490	490	p.D490H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	215	215	p.H215Q	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	568	568	p.Y568fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	497	497	p.D497E	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	244	244	p.L244V	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	520	520	p.F520V	1.0	1.0	0.0	circle	up
+mutation	Splice_Site	424	424	p.D424E	0.6	0.0	0.6	inv_triangle	up
+mutation	Missense_Mutation	215	215	p.H215Y	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	487	487	p.V487I	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	371	371	p.R371H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	373	373	p.A373T	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	181	181	p.A181T	1.0	1.0	0.0	circle	up

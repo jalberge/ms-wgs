@@ -1,0 +1,18 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=SGPP1;	1	441	Name=SGPP1;	0.7	0.9	0.9	-	-
+domain	Phosphatase sequence motif I. {ECO:0000305}.	178	186	Phosphatase sequence motif I. {ECO:0000305}.	0.51	0.71	0.52	-	-
+domain	Phosphatase sequence motif II. {ECO:0000305}.	205	208	Phosphatase sequence motif II. {ECO:0000305}.	0.25	0.49	0.77	-	-
+domain	Phosphatase sequence motif III. {ECO:0000305}.	248	259	Phosphatase sequence motif III. {ECO:0000305}.	0.65	0.39	0.66	-	-
+mutation	Silent	148	148	p.F148F	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	172	172	p.Y172D	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	193	193	p.K193R	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	188	188	p.S188*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	231	231	p.L231F	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	211	211	p.S211P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	101	101	p.S101L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	142	142	p.L142P	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	124	124	p.S124N	1.0	1.0	0.0	circle	up
+mutation	Silent	123	123	p.V123V	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	188	188	p.S188L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	181	181	p.I181N	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	150	150	p.F150L	1.0	1.0	0.0	circle	up

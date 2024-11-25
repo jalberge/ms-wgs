@@ -1,0 +1,28 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=NFKBIA; Synonyms=IKBA, MAD3, NFKBI;	1	317	Name=NFKBIA; Synonyms=IKBA, MAD3, NFKBI;	0.7	0.9	0.9	-	-
+domain	Destruction motif.	30	36	Destruction motif.	0.48	0.72	0.73	-	-
+domain	Nuclear export signal.	45	54	Nuclear export signal.	0.21	0.45	0.67	-	-
+domain	Nuclear import signal.	110	120	Nuclear import signal.	0.59	0.3	0.53	-	-
+mutation	Nonsense_Mutation	69	69	p.Q69*	1.0	0.0	0.0	triangle	up
+mutation	Nonsense_Mutation	112	112	p.Q112*	1.0	0.0	0.0	triangle	up
+mutation	In_Frame_Del	296	296	p.296_	0.0	0.0	1.0	square	up
+mutation	Missense_Mutation	286	286	p.E286K	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	80	80	p.L80*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	87	87	p.K87E	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	278	278	p.Q278*	1.0	0.0	0.0	triangle	up
+mutation	Frame_Shift_Del	115	115	p.LHL115fs	1.0	0.0	0.0	square	up
+mutation	Nonsense_Mutation	40	40	p.E40*	1.0	0.0	0.0	triangle	up
+mutation	Nonsense_Mutation	255	255	p.Q255*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	222	222	p.H222Y	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	103	103	p.FLN103fs	1.0	0.0	0.0	square	up
+mutation	Splice_Site	212	212	p.Q212R	0.6	0.0	0.6	inv_triangle	up
+mutation	In_Frame_Del	268	268	p.QL268del	0.0	0.0	1.0	square	up
+mutation	Nonsense_Mutation	68	68	p.Q68*	1.0	0.0	0.0	triangle	up
+mutation	Frame_Shift_Del	245	245	p.RV245fs	1.0	0.0	0.0	square	up
+mutation	Nonsense_Mutation	85	85	p.E85*	1.0	0.0	0.0	triangle	up
+mutation	Frame_Shift_Del	124	124	p.P124fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	225	225	p.V225E	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	115	115	p.L115P	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	54	54	p.LEPQEVP54fs	1.0	0.0	0.0	square	up
+mutation	Nonsense_Mutation	140	140	p.R140*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	70	70	p.L70V	1.0	1.0	0.0	circle	up

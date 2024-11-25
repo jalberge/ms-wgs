@@ -1,0 +1,6 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=ANKRD9;	1	317	Name=ANKRD9;	0.7	0.9	0.9	-	-
+mutation	Missense_Mutation	218	218	p.A218V	1.0	1.0	0.0	circle	up
+mutation	Silent	146	146	p.R146R	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	40	40	p.A40V	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	268	268	p.Q268fs	1.0	0.0	0.0	square	up

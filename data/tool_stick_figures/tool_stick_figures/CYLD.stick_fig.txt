@@ -1,0 +1,45 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=CYLD {ECO:0000303|PubMed:12917689, ECO:0000312|HGNC:HGNC:2584}; Synonyms=CYLD1, KIAA0849 {ECO:0000303|PubMed:10048485}; ORFNames=HSPC057;	1	956	Name=CYLD {ECO:0000303|PubMed:12917689, ECO:0000312|HGNC:HGNC:2584}; Synonyms=CYLD1, KIAA0849 {ECO:0000303|PubMed:10048485}; ORFNames=HSPC057;	0.7	0.9	0.9	-	-
+domain	Interaction with TRIP. {ECO:0000269|PubMed:14676304}.	106	593	Interaction with TRIP. {ECO:0000269|PubMed:14676304}.	0.35	0.53	0.67	-	-
+domain	Interaction with TRAF2.	394	469	Interaction with TRAF2.	0.3	0.79	0.35	-	-
+domain	Interaction with IKBKG/NEMO. {ECO:0000269|PubMed:15341735}.	470	554	Interaction with IKBKG/NEMO. {ECO:0000269|PubMed:15341735}.	0.38	0.22	0.73	-	-
+mutation	Missense_Mutation	825	825	p.H825Y	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	612	612	p.A612fs	1.0	0.0	0.0	square	up
+mutation	Frame_Shift_Ins	803	803	p.Y803fs	1.0	0.0	0.0	square	up
+mutation	Splice_Site	507	507	p.E507A	0.6	0.0	0.6	inv_triangle	up
+mutation	Missense_Mutation	853	853	p.C853R	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	76	76	p.E76*	1.0	0.0	0.0	triangle	up
+mutation	Nonsense_Mutation	371	371	p.S371*	1.0	0.0	0.0	triangle	up
+mutation	Frame_Shift_Del	196	196	p.F196fs	1.0	0.0	0.0	square	up
+mutation	Nonsense_Mutation	226	226	p.E226*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	788	788	p.C788G	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	344	344	p.S344*	1.0	0.0	0.0	triangle	up
+mutation	Splice_Site	609	609	p.C609Y	0.6	0.0	0.6	inv_triangle	up
+mutation	Nonsense_Mutation	519	519	p.R519*	1.0	0.0	0.0	triangle	up
+mutation	Nonsense_Mutation	948	948	p.Q948*	1.0	0.0	0.0	triangle	up
+mutation	Nonsense_Mutation	936	936	p.R936*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	486	486	p.G486E	1.0	1.0	0.0	circle	up
+mutation	Splice_Site	169	169	p.E169*	0.6	0.0	0.6	inv_triangle	up
+mutation	Frame_Shift_Del	720	720	p.E720fs	1.0	0.0	0.0	square	up
+mutation	Frame_Shift_Ins	223	223	p.M223fs	1.0	0.0	0.0	square	up
+mutation	Nonsense_Mutation	716	716	p.Q716*	1.0	0.0	0.0	triangle	up
+mutation	Nonsense_Mutation	166	166	p.E166*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	109	109	p.R109S	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	375	375	p.W375*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	475	475	p.L475F	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	542	542	p.D542Y	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	116	116	p.R116fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	492	492	p.G492V	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	174	174	p.Q174*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	720	720	p.E720G	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	9	9	p.E9Q	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	129	129	p.C129Y	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	365	365	p.S365*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	600	600	p.S600F	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	605	605	p.S605*	1.0	0.0	0.0	triangle	up
+mutation	Frame_Shift_Del	413	413	p.ENRF413fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	442	442	p.A442T	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	769	769	p.I769F	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	582	582	p.E582D	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	585	585	p.E585*	1.0	0.0	0.0	triangle	up
+mutation	Nonsense_Mutation	141	141	p.K141*	1.0	0.0	0.0	triangle	up

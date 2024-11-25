@@ -1,0 +1,18 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=RASA2; Synonyms=GAP1M, RASGAP;	1	850	Name=RASA2; Synonyms=GAP1M, RASGAP;	0.7	0.9	0.9	-	-
+domain	Ras GTPase-activating protein 2.	2	850	Ras GTPase-activating protein 2.	0.2	0.65	0.21	-	-
+mutation	Missense_Mutation	96	96	p.P96R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	437	437	p.E437K	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	266	266	p.DV266fs	1.0	0.0	0.0	square	up
+mutation	Nonsense_Mutation	172	172	p.Q172*	1.0	0.0	0.0	triangle	up
+mutation	Frame_Shift_Del	760	760	p.E760fs	1.0	0.0	0.0	square	up
+mutation	Splice_Site	45	45	p.C45*	0.6	0.0	0.6	inv_triangle	up
+mutation	Missense_Mutation	54	54	p.L54F	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	612	612	p.Y612H	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	258	258	p.WNNGNLVQ258fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	804	804	p.S804C	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	66	66	p.I66L	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	513	513	p.F513fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	48	48	p.K48E	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	511	511	p.R511H	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	394	394	p.T394K	1.0	1.0	0.0	circle	up

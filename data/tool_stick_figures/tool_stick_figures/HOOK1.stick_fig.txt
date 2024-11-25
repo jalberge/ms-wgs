@@ -1,0 +1,11 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=HOOK1;	1	728	Name=HOOK1;	0.7	0.9	0.9	-	-
+domain	Sufficient for interaction with microtubules.	1	555	Sufficient for interaction with microtubules.	0.48	0.51	0.59	-	-
+domain	Sufficient for interaction with AKTIP and VPS18. {ECO:0000269|PubMed:18799622}.	657	728	Sufficient for interaction with AKTIP and VPS18. {ECO:0000269|PubMed:18799622}.	0.76	0.48	0.32	-	-
+mutation	Missense_Mutation	694	694	p.D694N	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	93	93	p.L93W	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	93	93	p.L93W	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	93	93	p.L93W	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	351	351	p.M351V	1.0	1.0	0.0	circle	up
+mutation	Nonsense_Mutation	99	99	p.E99*	1.0	0.0	0.0	triangle	up
+mutation	Missense_Mutation	437	437	p.Q437R	1.0	1.0	0.0	circle	up

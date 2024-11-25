@@ -1,0 +1,13 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=HIST1H4A; Synonyms=H4/A, H4FA; and Name=HIST1H4B; Synonyms=H4/I, H4FI; and Name=HIST1H4C; Synonyms=H4/G, H4FG; and Name=HIST1H4D; Synonyms=H4/B, H4FB; and Name=HIST1H4E; Synonyms=H4/J, H4FJ; and Name=HIST1H4F; Synonyms=H4/C, H4FC; and Name=HIST1H4H; Synonyms=H4/H, H4FH; and Name=HIST1H4I; Synonyms=H4/M, H4FM; and Name=HIST1H4J; Synonyms=H4/E, H4FE; and Name=HIST1H4K; Synonyms=H4/D, H4FD; and Name=HIST1H4L; Synonyms=H4/K, H4FK; and Name=HIST2H4A; Synonyms=H4/N, H4F2, H4FN, HIST2H4; and Name=HIST2H4B; Synonyms=H4/O, H4FO; and Name=HIST4H4;	1	103	Name=HIST1H4A; Synonyms=H4/A, H4FA; and Name=HIST1H4B; Synonyms=H4/I, H4FI; and Name=HIST1H4C; Synonyms=H4/G, H4FG; and Name=HIST1H4D; Synonyms=H4/B, H4FB; and Name=HIST1H4E; Synonyms=H4/J, H4FJ; and Name=HIST1H4F; Synonyms=H4/C, H4FC; and Name=HIST1H4H; Synonyms=H4/H, H4FH; and Name=HIST1H4I; Synonyms=H4/M, H4FM; and Name=HIST1H4J; Synonyms=H4/E, H4FE; and Name=HIST1H4K; Synonyms=H4/D, H4FD; and Name=HIST1H4L; Synonyms=H4/K, H4FK; and Name=HIST2H4A; Synonyms=H4/N, H4F2, H4FN, HIST2H4; and Name=HIST2H4B; Synonyms=H4/O, H4FO; and Name=HIST4H4;	0.7	0.9	0.9	-	-
+domain	Histone H4.	2	103	Histone H4.	0.62	0.58	0.25	-	-
+domain	DNA-binding (experimentally determined)	17	21	DNA-binding (experimentally determined)	0.26	0.3	0.25	-	-
+mutation	Missense_Mutation	33	33	p.P33L	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	93	93	p.R93K	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	31	31	p.T31I	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	27	27	p.I27M	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	33	33	p.P33H	1.0	1.0	0.0	circle	up
+mutation	Start_Codon_SNP	1	1	p.M1V	0.63	1.0	0	circle	up
+mutation	Missense_Mutation	76	76	p.H76Y	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	70	70	p.A70T	1.0	1.0	0.0	circle	up
+mutation	Silent	61	61	p.V61V	0.8	0.8	0.8	circle	up

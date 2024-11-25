@@ -1,0 +1,23 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=IGLL5;	1	214	Name=IGLL5;	0.7	0.9	0.9	-	-
+domain	Immunoglobulin lambda-like polypeptide 5.	36	214	Immunoglobulin lambda-like polypeptide 5.	0.49	0.66	0.7	-	-
+domain	J region (By similarity to lambda light- chain).	98	109	J region (By similarity to lambda light- chain).	0.57	0.62	0.22	-	-
+domain	C region (By similarity to lambda light- chain).	110	214	C region (By similarity to lambda light- chain).	0.76	0.26	0.69	-	-
+mutation	In_Frame_Del	97	97	p.YV97del	0.0	0.0	1.0	square	up
+mutation	Splice_Site	109	109	p.G109S	0.6	0.0	0.6	inv_triangle	up
+mutation	Frame_Shift_Del	95	95	p.L95fs	1.0	0.0	0.0	square	up
+mutation	Frame_Shift_Ins	35	35	p.A35fs	1.0	0.0	0.0	square	up
+mutation	Frame_Shift_Del	96	96	p.C96fs	1.0	0.0	0.0	square	up
+mutation	Frame_Shift_Ins	97	97	p.YV97fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	106	106	p.T106S	1.0	1.0	0.0	circle	up
+mutation	Frame_Shift_Del	8	8	p.V8fs	1.0	0.0	0.0	square	up
+mutation	Frame_Shift_Ins	97	97	p.Y97fs	1.0	0.0	0.0	square	up
+mutation	Missense_Mutation	165	165	p.K165R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	104	104	p.K104T	1.0	1.0	0.0	circle	up
+mutation	Silent	104	104	p.K104K	0.8	0.8	0.8	circle	up
+mutation	In_Frame_Del	172	172	p.N172del	0.0	0.0	1.0	square	up
+mutation	Missense_Mutation	174	174	p.Y174F	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	104	104	p.K104T	1.0	1.0	0.0	circle	up
+mutation	Splice_Site	109	109	p.G109S	0.6	0.0	0.6	inv_triangle	up
+mutation	Silent	192	192	p.S192S	0.8	0.8	0.8	circle	up
+mutation	Silent	194	194	p.S194S	0.8	0.8	0.8	circle	up

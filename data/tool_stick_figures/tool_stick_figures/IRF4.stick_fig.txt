@@ -1,0 +1,29 @@
+feature	type	start	end	label	R	G	B	shape	direction
+protein	Name=IRF4; Synonyms=MUM1;	1	451	Name=IRF4; Synonyms=MUM1;	0.7	0.9	0.9	-	-
+domain	IRF tryptophan pentad repeat. {ECO:0000255|PROSITE-ProRule:PRU00840}.	21	129	IRF tryptophan pentad repeat. {ECO:0000255|PROSITE-ProRule:PRU00840}.	0.72	0.55	0.41	-	-
+mutation	Missense_Mutation	432	432	p.E432Q	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	123	123	p.K123R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	123	123	p.K123R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	123	123	p.K123R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	351	351	p.E351G	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	99	99	p.C99S	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	123	123	p.K123R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	102	102	p.N102K	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	123	123	p.K123R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	123	123	p.K123R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	123	123	p.K123R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	443	443	p.S443C	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	106	106	p.D106Y	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	123	123	p.K123R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	123	123	p.K123R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	121	121	p.P121T	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	123	123	p.K123R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	59	59	p.K59R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	123	123	p.K123R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	166	166	p.V166D	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	123	123	p.K123R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	29	29	p.I29M	1.0	1.0	0.0	circle	up
+mutation	Silent	55	55	p.K55K	0.8	0.8	0.8	circle	up
+mutation	Missense_Mutation	117	117	p.D117V	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	123	123	p.K123R	1.0	1.0	0.0	circle	up
+mutation	Missense_Mutation	243	243	p.E243K	1.0	1.0	0.0	circle	up

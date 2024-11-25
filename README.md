@@ -58,5 +58,3 @@ Code is in `code/6.2_noncoding-ILF2-promoter-zoom.R`.
 * Figure 6DE
 
 Code is in `code/6.3_noncoding-ILF2_commpass_expr.R`, detailed participant IDs from the CoMMpass study and their mutational status is provided in Supplementary Table S11 and S12.
-
-## Additional notes

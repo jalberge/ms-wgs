@@ -494,6 +494,8 @@ boxplot.t.test.pairwise.ILF2.Gain1q <- mut.expr.df.any.mutant.covered |>
   
   geom_boxplot(linewidth=0.25, outlier.size = 0.25) +
   
+  geom_jitter(alpha=0.2, size=0.25, shape=1) +
+  
   geom_text(data=group.counts.ilf2.group, aes(y=11, label=label), color="#333333", size=1.5, fontface=3) +
   
   scale_color_manual(values=brewer.pal(11, "PiYG")[c(11, 3, 2, 1)]) +

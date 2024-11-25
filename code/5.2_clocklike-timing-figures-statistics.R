@@ -335,6 +335,48 @@ ggsave(plot = boxplot.age.stage.tumor.age, filename = "../figures/boxplot_timing
 
 mgus.smm.timing.groups <- all.timing.groups |> filter(Simple_Disease_stage!="MM")
 
+#### REVISIONS #1 ####
+# revisions: is age at HRD an independent factor of progression
+independent.hrd.prog <- mgus.smm.timing.groups |> 
+  inner_join(clinical.and.terra.ref.pairs.samples, by=c("Sample"="HDP_Participant_ID"))
+library(logistf) # for Firth correction
+# run 1 model without MGUS which is "cleaner" from a clinical point of view (we could get criticized that MGUS will not progress anyway)
+independent.hrd.prog$Disease_Status <- factor(independent.hrd.prog$Disease_Status, levels=c("MGUS", "LRSMM", "IRSMM", "HRSMM"))
+independent.hrd.prog$Tumor_Age_Decade <- independent.hrd.prog$Tumor_Age/10
+# model:
+hrd.age.independent.model <- glm(Progression_status~Tumor_Age_Decade + Disease_Status, data=independent.hrd.prog |> filter(Disease_Status!="MGUS"), family = "binomial")
+#coefficients
+tidy_model <- tidy(hrd.age.independent.model, conf.int = TRUE) |>
+  mutate(estimate = exp(estimate), # exponentiate to have odds ratio scale
+         conf.low = exp(conf.low),
+         conf.high = exp(conf.high)) |>
+  mutate(# trim at 5 to make the graph readable
+         conf.high=pmin(conf.high, 5))
+tidy_model
+
+#forest
+hrd.plot <- ggplot(tidy_model |> filter(term!="(Intercept)"), aes(x = estimate, y = term, color=p.value<0.05)) +
+  geom_point() +
+  geom_errorbarh(aes(xmin = conf.low, xmax = conf.high), height = 0.2) +
+  theme_minimal() +
+  xlab("Odds Ratio (Exponentiated Coefficients)") +
+  ylab("") +
+  scale_color_manual(values=c("TRUE"=brewer.pal(4, "Set1")[2], "FALSE"="#777777")) +
+  geom_vline(xintercept = 1, linetype = "dashed", color = "#333333") +
+  theme_bw() +
+  theme(panel.grid = element_blank(), legend.position = "none")
+ggsave("../figures/hrd.age.independent.pdf", width = 3, height = 3)
+# 
+# term                estimate std.error statistic p.value conf.low conf.high
+# <chr>                  <dbl>     <dbl>     <dbl>   <dbl>    <dbl>     <dbl>
+#   1 (Intercept)           0.0262     1.36    -2.67   0.00758 0.000866     0.245
+# 2 Tumor_Age_Decade      1.95       0.329    2.04   0.0415  1.08         4.11 
+# 3 Disease_StatusIRSMM   0.940      1.43    -0.0429 0.966   0.0530      25.4  
+# 4 Disease_StatusHRSMM   0.946      1.35    -0.0407 0.968   0.0692      23.5  
+
+#### REVISIONS ####
+
+
 mgus.smm.timing.groups |> wilcox_test(Tumor_Age~Progression_status)
 p.vals.progression <- mgus.smm.timing.groups |> dunn_test(Tumor_Age~Progression_status) |> add_xy_position()
 mgus.smm.timing.groups |> group_by(Progression_status) |> summarise(median=median(Tumor_Age))
@@ -363,7 +405,6 @@ timing.details.plus.average.tumor.age
 
 ggsave("../figures/supp_timing.details.plus.boxplots.png", timing.details.plus.average.tumor.age, width = 6, height = 2.4, scale = 1.5)
 ggsave("../figures/supp_timing.details.plus.boxplots.pdf", timing.details.plus.average.tumor.age, width = 6, height = 2.4, scale = 1.5)
-
 
 ## stats -----
 

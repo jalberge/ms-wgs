@@ -11,7 +11,6 @@ source("0_annotate_samples.R")
 
 # Load DIG ref ------------------------------------------------------------
 
-# bed.header <- c("chr", "start", "end", "fullname", paste0())
 pcawg.bed.hg19 <- read_table("../data/_DIG/MM/annotations/grch37.PCAWG_noncoding.bed", 
                              col_names = c("chr", "start", "end", "name", "score", "strand", "thickStart", "thickEnd", "itemRgb", "blockCount", "blockSizes", "blockStarts" ))
 nc.pcawg.bed.hg19 <- pcawg.bed.hg19 |> filter(!str_detect(name, "gc19_pc.cds"))

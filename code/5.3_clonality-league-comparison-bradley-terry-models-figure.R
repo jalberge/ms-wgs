@@ -38,7 +38,7 @@ g.tm <- ggplot(tm, aes(y=cn, color=)) +
                   color="#048B9A", alpha=0.7) +
   theme_bw(base_size = 7) +
   theme(panel.grid = element_blank()) +
-  labs(x="Bradley-Terry score", y="")
+  labs(x="BT score", y="")
 
 g.tm  
 

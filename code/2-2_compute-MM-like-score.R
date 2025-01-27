@@ -137,12 +137,13 @@ sig.mm.stats <- sig.mm |> group_by(Disease_Status) |> summarise(n=n(), label=pas
 fig1b <- ggplot(sig.mm, aes(factor(Disease_Status, levels=c("MGUS", "SMM", "MM")), total_sig, fill=factor(Disease_Status, levels=c("MGUS", "SMM", "MM")))) + 
   geom_violin(scale = "width", adjust=1.5, alpha=0.25) +
   geom_boxplot(width=0.4) +
-  geom_text(data=sig.mm.stats, aes(y=y, label=label), size=2.5) +
+  geom_text(data=sig.mm.stats, aes(y=y, label=label), size=6/.pt) +
   scale_fill_viridis(discrete = TRUE, alpha=0.6, option = "G") +
   scale_y_continuous(breaks=seq(-1, 11)) +
   labs(x="", y="MM-like score", fill="") + 
   theme_bw(base_size = 6) +
-  theme(panel.grid = element_blank(), legend.position = "none")
+  theme(panel.grid = element_blank(), legend.position = "none", 
+        axis.text = element_text(size = 6))
 
 print(fig1b)
 
@@ -188,12 +189,12 @@ sig.smm.stats <- sig.smm.non.null |> group_by(risk_class) |> summarise(n=n(), la
 fig1c <- ggplot(sig.smm.non.null, aes(factor(risk_class, levels=c("Low", "Intermediate", "High")), total_sig, fill=factor(risk_class, levels=c("Low", "Intermediate", "High")))) + 
   geom_violin(scale = "width", adjust=1.5, alpha=0.25) +
   geom_boxplot(width=0.4) +
-  geom_text(data=sig.smm.stats, aes(y=y, label=label), size=2.5) +
+  geom_text(data=sig.smm.stats, aes(y=y, label=label), size=6/.pt) +
   scale_fill_brewer(palette = 1) +
   scale_y_continuous(breaks=seq(-1, 11)) +
   labs(x="20/2/20 Risk", y="MM-like score", fill="") + 
   theme_bw(base_size = 6) +
-  theme(panel.grid = element_blank(), legend.position = "none")
+  theme(panel.grid = element_blank(), legend.position = "none", axis.text = element_text(size=6))
 
 print(fig1c)
 
@@ -251,6 +252,88 @@ summary(coxph(Surv(Days, Progression_status) ~ total_sig>1, data=survival.sig))
 # Likelihood ratio test= 5.6  on 1 df,   p=0.02
 # Wald test            = 4.72  on 1 df,   p=0.03
 # Score (logrank) test = 5.59  on 1 df,   p=0.02
+
+
+# Fig 1E (from Sofia) -----------------------------------------------------
+
+# KM - Signature Bustoros only
+m.sig.su2c <- read_csv("../JB/Modified dataframes/Mark_Signature_SU2C_only.csv")
+m.sig.su2c <-  m.sig.su2c %>% mutate(Disease_Status=factor(Disease_Status, levels = c("Low", "Intermediate", "High")))
+m.sig.su2c <-  m.sig.su2c %>% mutate(HRSMM=Disease_Status=="High")
+
+modify.score <- function(data) {
+  
+  #dichotomize
+  data <- data %>% 
+    mutate(Score = as.numeric(total_sig>=2))
+}
+
+km.m <- modify.score(m.sig.su2c)
+
+table(km.m$Score)
+
+km.m$Score=as.logical(km.m$Score)
+summary(coxph(Surv(Days, Progression_status) ~ Score, data=km.m))
+
+# Call:
+#   coxph(formula = Surv(Days, Progression_status) ~ Score, data = km.m)
+# 
+# n= 87, number of events= 58 
+# 
+# coef exp(coef) se(coef)     z Pr(>|z|)    
+# ScoreTRUE 1.2218    3.3935   0.2807 4.353 1.34e-05 ***
+#   ---
+#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+# 
+# exp(coef) exp(-coef) lower .95 upper .95
+# ScoreTRUE     3.393     0.2947     1.958     5.883
+# 
+# Concordance= 0.653  (se = 0.031 )
+# Likelihood ratio test= 19.5  on 1 df,   p=1e-05
+# Wald test            = 18.95  on 1 df,   p=1e-05
+# Score (logrank) test = 21.07  on 1 df,   p=4e-06
+
+fit_Score_Bustoros <- coxph(Surv(Days, Progression_status) ~ Score+Disease_Status, data=as.data.frame(km.m))
+fit_Score_Bustoros
+
+ggforest.jco <- ggforest(fit_Score_Bustoros, fontsize = 1, noDigits = 2,main = NULL)
+
+ggsave(filename = "../figures/forest-jco.pdf", ggforest.jco, width = 2.5, height = 2)
+
+
+#KM
+km <- function(data){
+  
+  fit <- survfit(Surv(Days, Progression_status) ~ Score, data=data)
+  
+  ggsurvplot(fit, 
+             data = data,
+             surv.median.line = "none", # Add medians survival
+             
+             # Change legends: title & labels
+             # Add p-value and interval
+             pval = FALSE,
+             conf.int = TRUE,
+             xscale = "d_y",
+             ylab = c("Probability of Progression"),
+             # Add risk table
+             risk.table = TRUE,
+             tables.height = 0.25,
+             tables.theme = theme_cleantable(),
+             xlim = c(0, 365.25*5),
+             break.time.by = 365.25,
+             fun = "event",
+             
+             # strata group labels
+             legend.labs = c("Score <= 1", "Score > 1"),
+             
+             # Color palettes
+             palette = c("#377EB8", "#E41A1C"),
+             ggtheme = theme_bw(16), # Change ggplot2 theme
+             fontsize = 5)
+}
+
+km(km.m)
 
 # Revisions ---------------------------------------------------------------
 

@@ -1,14 +1,13 @@
-
 # MYC SV summary ----------------------------------------------------------
 
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 library(tidyverse)
 
-
 # close neighborhood mutational signature ---------------------------------
 
-sig.neighbors.sv <- read_tsv("../data/XAVI/data_for_plotting_proportions_of_signatures_FINAL.tsv")
+sig.neighbors.sv <- read_tsv("../data/SSVGAR/Revisions/data_for_plotting_proportions_of_signatures_subsampled_randomly_for_top_5_genes_for_reviewers (1).tsv")
+# sig.neighbors.sv <- read_tsv("../data/SSVGAR/Revisions/data_for_plotting_proportions_of_signatures_FINAL.tsv")
 sig.neighbors.sv <- sig.neighbors.sv |> column_to_rownames("...1")
 
 # AID+APOBEC 
@@ -190,6 +189,11 @@ mgus.smm.genomes.score <- mm.like |>
   filter(Disease_Status %in% c("MGUS", "SMM") & 
            cohort %in% c("CTC", "MMRF", "OBEN", "SU2C", "WTC"))
 # the 157 MGUS/SMM WGS stays consistent here. (checked)
+
+
+# FIXME -------------------------------------------------------------------
+
+# left_join fails (to investigate)
 discrepant.tx.cna <- mgus.smm.genomes.score |>
   left_join(myc.partners.ig.annot |> mutate(MYC_TX=1), by=c("ID"="Participant_ID")) |>
   mutate(MYC_TX=replace_na(MYC_TX, 0))
@@ -200,6 +204,7 @@ discrepant.tx.cna |> select(1:5, total_sig, amp_chr_8q, MYC_TX, Final_Partner, P
 
 
 
+
 stage.wgs.counts <- final.annot.matrix |> filter(!startsWith(Participant_ID, "SMM")) |> group_by(Stage) |> count()
 
 myc.stage.numbers <- myc.partners.ig.annot |>
@@ -207,6 +212,14 @@ myc.stage.numbers <- myc.partners.ig.annot |>
   summarise(nn=n()) |>
   left_join(stage.wgs.counts, by=c("Stage"))
 
+myc.stage.numbers
+# > myc.stage.numbers
+# # A tibble: 3 × 3
+# Stage    nn     n
+# <chr> <int> <int>
+#   1 MGUS      1    37
+# 2 MM      151   812
+# 3 SMM       8   120
 myc.stage.binom.confit <- myc.stage.numbers |>
   mutate(Stage=factor(Stage, levels=c("MGUS", "SMM", "MM"))) |>
   group_by(Stage) |>
@@ -228,6 +241,13 @@ myc.stage.binom.confit |> write_tsv("../data/myc_counts_confint.tsv")
 
 ## percent MYC barplot -----------------------------------------------------
 
+myc.stage.binom.confit <-  read_tsv("../data/myc_counts_confint.tsv")
+
+initial.disease.stage.palette <- c("MM"="#253494", 
+                                   "SMM\nProgressed"="#225ea8", 
+                                   "SMM"="#41b6c4", 
+                                   "MGUS"="#7fcdbb")
+
 percent.myc <- ggplot(myc.stage.binom.confit, aes(Stage, estimate, fill=Stage)) +
   
   geom_bar(stat="identity") +
@@ -241,6 +261,8 @@ percent.myc <- ggplot(myc.stage.binom.confit, aes(Stage, estimate, fill=Stage)) 
   theme_bw(base_size = 7) +
   theme(panel.grid = element_blank(),
         legend.position="none")
+
+percent.myc
 
 ggsave("../figures/percent.myc.pdf", width = 2, height = 2)
 ggsave("../figures/percent.myc.png", width = 2, height = 2)

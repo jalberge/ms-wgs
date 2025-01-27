@@ -1082,18 +1082,37 @@ ggsave(filename = "../figures/sbs.plot.subclonal.clonal.dup.pdf", plot = sbs.plo
 
 # CCF / clonality per mutation mechanism ----------------------------------
 
+dedup.maf.sbs <- read_tsv("../data/_MM_Sigs_HDP/20240415_deduplicated_maf.tsv")
+
 clonal.process.family <- dedup.maf.sbs |>
   filter(!startsWith(Tumor_Sample_Barcode, "MMRF")) |>
   filter(clonal_landau | non_clonal_landau) |>
   group_by(Guess, Gender,Age, Stage, HRDTx, Cohort, Assay, IMWG, StageAnd22020, HDP_Reference_Pair, SimpleStage, Participant_ID) |>
-  summarize(n=sum(clonal_landau), frac_clonal=n/(n+sum(non_clonal_landau)))
+  summarize(n=sum(clonal_landau), n_nonclonal=sum(non_clonal_landau), frac_clonal=n/(n+n_nonclonal))
 
+# FIGURE 4B ---------------------------------------------------------------
 
-# FIGURE 4C ---------------------------------------------------------------
+clonal.process.family |>
+  group_by(Guess) |>
+  summarise(total_clonal=sum(n), total_mutations=sum(n)+sum(n_nonclonal), total_non_clonal=sum(n_nonclonal))
+# # A tibble: 4 × 4
+# Guess      total_clonal total_mutations total_non_clonal
+# <chr>             <int>           <int>            <int>
+# 1 AID/SHM           11415           15636             4221
+# 2 APOBEC            49566          101922            52356
+# 3 All<0.85         397876          733273           335397
+# 4 Clock-like        14996           24780             9784
 
 clonal.process.family |> 
   group_by(Guess) |> 
   summarize(median=median(frac_clonal))
+# # A tibble: 4 × 2
+# Guess      median
+# <chr>       <dbl>
+# 1 AID/SHM     0.714
+# 2 APOBEC      0.3  
+# 3 All<0.85    0.630
+# 4 Clock-like  0.690
 
 fracion_clonal.stats <- clonal.process.family |> 
   ungroup() |>
@@ -1102,6 +1121,13 @@ fracion_clonal.stats <- clonal.process.family |>
   dunn_test(frac_clonal ~ Guess) |>
   add_xy_position() |>
   mutate(y.position=y.position+0.1)
+
+# # A tibble: 3 × 13
+# .y.         group1     group2     n1    n2 statistic        p    p.adj p.adj.signif y.position groups        xmin  xmax
+# <chr>       <chr>      <chr>   <int> <int>     <dbl>    <dbl>    <dbl> <chr>             <dbl> <named list> <dbl> <dbl>
+#   1 frac_clonal Clock-like AID/SHM   133   173      2.53 1.15e- 2 1.15e- 2 *                  1.10 <chr [2]>        1     2
+# 2 frac_clonal Clock-like APOBEC    133    53     -5.28 1.32e- 7 2.64e- 7 ****               1.10 <chr [2]>        1     3
+# 3 frac_clonal AID/SHM    APOBEC    173    53     -7.31 2.58e-13 7.75e-13 ****               1.10 <chr [2]>        2     3
 
 signature.fraction.clonal.plot <- ggplot(clonal.process.family |> 
          filter(Guess!="All<0.85")

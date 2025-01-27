@@ -886,7 +886,7 @@ Hm <- Heatmap(final.class.matrix,
               show_column_dend = FALSE,
               # col = c("white", "black"),
               col = class.values.colors,
-              row_names_gp = gpar(fontsize = 5, col=row.names.colors, fontface=row.names.fontface),
+              row_names_gp = gpar(fontsize = 6, col=row.names.colors, fontface=row.names.fontface),
               border = TRUE,
               top_annotation = driver.sum.ha,
               left_annotation = gene.q.ha,
@@ -898,8 +898,8 @@ Hm <- Heatmap(final.class.matrix,
 ht.list <- patient.annotation %v% Hm
   
 draw(ht.list)
-
-pdf("../figures/FIG1_Mutations_with_class_stage_and_drivers.pdf", width = 6, height = 8)
+# 25.4 for conversion
+pdf("../figures/FIG1_Mutations_with_class_stage_and_drivers.pdf", width = 6, height = 9.5)
 draw(ht.list)
 dev.off()
 

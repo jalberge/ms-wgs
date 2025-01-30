@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/826514679.svg)](https://doi.org/10.5281/zenodo.14774593)
+
 This repository contains code used to analyze data reported in the Alberge, Dutta, Poletti, et al. paper. 
 
 ## Data availability

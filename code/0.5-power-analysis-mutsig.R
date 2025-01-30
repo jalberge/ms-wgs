@@ -55,14 +55,20 @@ power.to.detect.drivers <- expand_grid(N = seq(50, 5000, by=50),
   )
 
 
-ggplot(power.to.detect.drivers, aes(N, power, color=factor(r, labels=percent(unique(r))))) + 
+fig.s1a <- ggplot(power.to.detect.drivers, aes(N, power, color=factor(r, labels=percent(unique(r))))) + 
   geom_line() +
   geom_hline(yintercept = 0.9, color="darkgrey", linetype=3) +
   # geom_vline(xintercept = c(224, 1034), color="darkgrey", linetype=3) +
   scale_color_manual(values=brewer.pal(9, "Blues")[3:9]) +
   scale_x_log10() +
-  labs(x="Number of TN pairs", y="Power for 90% candidate drivers", color="Fraction") +
-  theme_bw()
+  scale_y_continuous(labels = scales::percent) +
+  labs(x="Number of cases", y="Power to detect candidate drivers", color="Fraction of cases mutated") +
+  theme_bw() +
+  theme(panel.grid = element_blank(), legend.position = "top", text = element_text(size = 6), aspect.ratio = 1)
+
+fig.s1a
+
+ggsave("../figures/binomial_power_adjusted_for_publication.pdf", fig.s1a, width = 2, height = 3)
 
 binom.test(min.patients, N, p1, alternative = "l")
 

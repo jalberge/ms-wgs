@@ -61,7 +61,6 @@ smm89m$sig_class <- ifelse(smm89m$total_sig >= 2, ">1", "≤1")
 smm89m$S = smm89m$total_sig_noCN
 smm89m$Score = smm89m$total_sig_noCN>1
 
-smm89m.risk$Mayo = factor(smm89m.risk$Mayo, levels=c("0", "1", "2"))
 
 smm89m |> 
   select(main_id,pat_id,Mayo,PFS_time,PFS_status,total_sig,sig_class,total_sig_noCN,sig_class_noCN,S,Score) |> 
@@ -71,6 +70,7 @@ smm89m |>
 smm89m.risk <- smm89m |> 
   filter(Mayo!="NA") |> 
   mutate(HRSMM=Mayo=="2")
+smm89m.risk$Mayo = factor(smm89m.risk$Mayo, levels=c("0", "1", "2"))
 
 smm89m.risk |> 
   select(main_id,pat_id,Mayo,PFS_time,PFS_status,total_sig,sig_class,total_sig_noCN,sig_class_noCN,S,Score) |> 
@@ -141,8 +141,28 @@ dev.off()
 # Forest plot -------------------------------------------------------------
 
 fit_noCN_HRSMM <- coxph(Surv(PFS_time, PFS_status) ~ Score + Mayo, data=as.data.frame(smm89m.risk))
-fit_noCN_HRSMM
-
+# summary(fit_noCN_HRSMM)
+# Call:
+#   coxph(formula = Surv(PFS_time, PFS_status) ~ Score + Mayo, data = as.data.frame(smm89m.risk))
+# 
+# n= 75, number of events= 26 
+# 
+# coef exp(coef) se(coef)     z Pr(>|z|)    
+# ScoreTRUE 0.9538    2.5956   0.4765 2.002 0.045319 *  
+#   Mayo1     0.5061    1.6589   0.5476 0.924 0.355361    
+# Mayo2     1.6858    5.3966   0.4909 3.434 0.000595 ***
+#   ---
+#   Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+# 
+# exp(coef) exp(-coef) lower .95 upper .95
+# ScoreTRUE     2.596     0.3853    1.0201     6.604
+# Mayo1         1.659     0.6028    0.5671     4.852
+# Mayo2         5.397     0.1853    2.0619    14.124
+# 
+# Concordance= 0.763  (se = 0.042 )
+# Likelihood ratio test= 15.54  on 3 df,   p=0.001
+# Wald test            = 16.81  on 3 df,   p=8e-04
+# Score (logrank) test = 19.86  on 3 df,   p=2e-04
 ggforest.boyle <- ggforest(fit_noCN_HRSMM, fontsize = 1, noDigits = 2,main = NULL)
 
 ggsave(filename = "../figures/forest-boyle.pdf", , width = 2.5, height = 2)

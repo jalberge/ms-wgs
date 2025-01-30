@@ -1,0 +1,205 @@
+---
+title: "SU2C_Signature_Plots"
+output: html_document
+date: "2024-03-05"
+---
+
+```{r include=FALSE}
+#Load packages 
+library(tidyverse)
+library(readxl)
+library(survival)
+library(survminer)
+library(broom)
+library(grid)
+library(rstatix)
+library(viridis)
+
+```
+
+```{r}
+# KM - Signature Bustoros only
+m.sig.su2c <- read_csv("../JB/Modified dataframes/Mark_Signature_SU2C_only.csv")
+m.sig.su2c <-  m.sig.su2c %>% mutate(Disease_Status=factor(Disease_Status, levels = c("Low", "Intermediate", "High")))
+m.sig.su2c <-  m.sig.su2c %>% mutate(HRSMM=Disease_Status=="High")
+
+modify.score <- function(data) {
+
+  #dichotomize
+data <- data %>% 
+  mutate(Score = as.numeric(total_sig>=2))
+}
+
+km.m <- modify.score(m.sig.su2c)
+
+# 20.2.20 risk?
+summary(coxph(Surv(Days, Progression_status) ~ Disease_Status, data=km.m))
+summary(coxph(Surv(Days, Progression_status) ~ HRSMM, data=km.m))
+
+summary(coxph(Surv(Days, Progression_status) ~ total_sig, data=km.m))
+summary(coxph(Surv(Days, Progression_status) ~ Score, data=km.m))
+
+summary(coxph(Surv(Days, Progression_status) ~ total_sig + Disease_Status, data=km.m))
+summary(coxph(Surv(Days, Progression_status) ~ total_sig + HRSMM, data=km.m))
+
+summary(coxph(Surv(Days, Progression_status) ~ Score + Disease_Status, data=km.m))
+summary(coxph(Surv(Days, Progression_status) ~ Score + HRSMM, data=km.m))
+
+
+km.m$Score=as.logical(km.m$Score)
+fit_Score_Bustoros <- coxph(Surv(Days, Progression_status) ~ Score+Disease_Status, data=as.data.frame(km.m))
+fit_Score_Bustoros
+# > summary(fit_Score_Bustoros)
+# Call:
+# coxph(formula = Surv(Days, Progression_status) ~ Score + Disease_Status, 
+#     data = as.data.frame(km.m))
+# 
+#   n= 87, number of events= 58 
+# 
+#                              coef exp(coef) se(coef)     z Pr(>|z|)    
+# ScoreTRUE                  1.0673    2.9074   0.2915 3.661 0.000251 ***
+# Disease_StatusIntermediate 1.1965    3.3087   0.5195 2.303 0.021262 *  
+# Disease_StatusHigh         2.2316    9.3150   0.4847 4.604 4.14e-06 ***
+# ---
+# Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+# 
+#                            exp(coef) exp(-coef) lower .95 upper .95
+# ScoreTRUE                      2.907     0.3439     1.642     5.148
+# Disease_StatusIntermediate     3.309     0.3022     1.195     9.159
+# Disease_StatusHigh             9.315     0.1074     3.602    24.086
+# 
+# Concordance= 0.767  (se = 0.03 )
+# Likelihood ratio test= 53.75  on 3 df,   p=1e-11
+# Wald test            = 43.41  on 3 df,   p=2e-09
+# Score (logrank) test = 54.66  on 3 df,   p=8e-12
+ggforest.jco <- ggforest(fit_Score_Bustoros, fontsize = 1, noDigits = 2,main = NULL)
+
+ggsave(filename = "../figures/forest-jco.pdf", ggforest.jco, width = 2.5, height = 2)
+
+
+#KM
+km <- function(data){
+
+fit <- survfit(Surv(Days, Progression_status) ~ Score, data=data)
+
+ggsurvplot(fit, 
+           data = data,
+           surv.median.line = "none", # Add medians survival
+           
+           # Change legends: title & labels
+           # Add p-value and interval
+           pval = FALSE,
+           conf.int = TRUE,
+           xscale = "d_y",
+           ylab = c("Probability of Progression"),
+           # Add risk table
+           risk.table = TRUE,
+           tables.height = 0.25,
+           tables.theme = theme_cleantable(),
+           xlim = c(0, 365.25*5),
+           break.time.by = 365.25,
+           fun = "event",
+
+           # strata group labels
+           legend.labs = c("Score <= 1", "Score > 1"),
+        
+           # Color palettes
+           palette = c("#377EB8", "#E41A1C"),
+           ggtheme = theme_bw(16), # Change ggplot2 theme
+           fontsize = 5)
+}
+
+km(km.m)
+
+```
+
+``` {r}
+
+SU2C.sig <- read_csv("../JB/Modified dataframes/Full_Signature_SU2C_only.csv")
+
+#Boxplot all stages - SU2C signature
+
+All.stages.s <- SU2C.sig %>% 
+    mutate(Disease_Status=case_when(
+        Disease_Status == "Low" ~ "SMM",
+        Disease_Status == "Intermediate" ~ "SMM",
+        Disease_Status == "High" ~ "SMM",
+        .default = Disease_Status)) %>%
+    mutate(Disease_Status=factor(Disease_Status, levels = c("MGUS", "SMM", "MM"))) %>%
+    mutate(Count = case_when(
+               ID == "pM5245" ~ "n = 19",
+               ID == "pM7747" ~ "n = 148",
+               ID == "MMRF_1033" ~ "n = 792",
+               .default = NA))
+
+ggplot(All.stages.s, aes(x = Disease_Status, y = total_sig, fill=Disease_Status)) +
+    geom_boxplot(width=0.4, show.legend = FALSE) +
+    geom_violin(alpha=0.25, show.legend = FALSE) +
+    scale_fill_viridis(discrete = TRUE, alpha=0.6, option = "G") +
+    scale_y_continuous(limits = c(-1, 11.5), breaks = c(-1,0,1,2,3,4,5,6,7,8,9,10,11)) +
+    xlab("Disease Status") + 
+    ylab("Score") +
+    labs(title = "Score distribution in all disease groups") +
+    theme_linedraw(base_line_size = 0) +
+    geom_text(data = All.stages.s, y = 11.5, aes(label=Count), color="black")
+
+ggsave(filename = "../Figures/Signature_Disease_stages.pdf")
+ggsave(filename = "../Figures/Signature_Disease_stages.png")
+
+```
+
+``` {r}
+
+#Boxplot smm - SU2C signature
+
+SMM.stages.s <- SU2C.sig %>% 
+    filter(Disease_Status %in% c("Low", "Intermediate", "High")) %>%
+    mutate(Disease_Status=factor(Disease_Status, levels = c("Low", "Intermediate", "High"))) %>%
+    mutate(Count=case_when(ID=="pM5568" ~ "n=47",
+                           ID=="pM7747" ~ "n=39",
+                           ID=="pM4587" ~ "n=62",
+                           .default = NA)) %>%
+mutate(Progression_status=if_else(Progression_status=="0", "Non-progressed", "Progressed"))
+
+ggplot(SMM.stages.s, aes(x = Disease_Status, y = total_sig, fill=Disease_Status)) +
+    geom_boxplot(width=0.15, show.legend = FALSE) +
+    geom_violin(alpha=0.25, show.legend = FALSE) +
+    scale_fill_brewer(palette = 1) +
+    scale_y_continuous(limits = c(-1, 9.5), breaks = c(-1,0,1,2,3,4,5,6,7,8,9)) +
+    xlab("Disease Status") + 
+    ylab("Score") +
+    labs(title = "Score distribution in SMM patients divided by risk stages") +
+    theme_linedraw(base_line_size = 0) +
+    geom_text(data = SMM.stages.s, y = 9.5, aes(label=Count), color="black")
+
+ggsave(filename = "../Figures/SMM_Risk.pdf")
+ggsave(filename = "../Figures/SMM_Risk.png")
+
+```
+
+``` {r}
+
+#Boxplot smm progression - SU2C signature
+
+SMM.progression.s <- SMM.stages.s %>% 
+    mutate(Count=case_when(ID=="pM10002" ~ "n=78",
+                           ID=="CSL151" ~ "n=70",
+                           .default = NA))
+
+progressioncolors <- c("Non-progressed"="#377EB8", "Progressed"="#E41A1C")
+
+ggplot(SMM.progression.s, aes(x = Progression_status, y = total_sig, fill=Progression_status)) +
+    geom_boxplot(width=0.25, show.legend = FALSE) +
+    geom_violin(alpha=0.25, show.legend = FALSE) +
+    scale_fill_manual(values=progressioncolors)+
+    scale_y_continuous(limits = c(-1, 9.5), breaks = c(-1,0,1,2,3,4,5,6,7,8,9)) +
+    xlab("Disease Status") + 
+    ylab("Score") +
+    labs(title = "Score distribution in SMM patients divided by progression status") +
+    theme_linedraw(base_line_size = 0) +
+    geom_text(data = SMM.progression.s, y = 9.5, aes(label=Count), color="black")
+
+ggsave(filename = "../Figures/SMM_Progression_status.pdf")
+ggsave(filename = "../Figures/SMM_Progression_status.png")
+
+```

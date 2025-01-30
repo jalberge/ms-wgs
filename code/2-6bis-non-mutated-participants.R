@@ -49,7 +49,7 @@ Hm.non.mutant <- Heatmap(final.class.matrix[which(rownames(final.numeric.matrix)
                          # col = c("white", "black"),
                          col = class.values.colors,
                          # row_names_gp = gpar(fontsize = 5, col=row.names.colors, fontface=row.names.fontface),
-                         row_names_gp = gpar(fontsize = 5, col="black", fontface=row.names.fontface),
+                         row_names_gp = gpar(fontsize = 6, col="black", fontface=row.names.fontface),
                          border = TRUE,
                          # left_annotation = gene.q.ha,
                          # right_annotation = or.col, 
@@ -70,6 +70,6 @@ draw(ht.list.non.mutant)
 
 patient.annotation.df[new.order.2, c("IMWG", "Stage")] |> group_by(Stage) |> count()
 
-pdf("../figures/FIG_S1_NoMutations_Heatmap_v2.pdf", width = 5, height = 5)
+pdf("../figures/FIG_S1_NoMutations_Heatmap_v3.pdf", width = 5, height = 6)
 draw(ht.list.non.mutant)
 dev.off()

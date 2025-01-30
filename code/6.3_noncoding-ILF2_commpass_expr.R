@@ -186,7 +186,7 @@ mut.expr.df.any.mutant <- expr.df |>
 # how many covered and expr
 mut.expr.df.any.mutant.covered <- mut.expr.df.any.mutant |> 
   filter(COVERED==TRUE)
-mut.expr.df.any.mutant.covered |> filter(hgnc_symbol=="ILF2") |> group_by(COVERED) |> count()
+mut.expr.df.any.mutant.covered |> filter(hgnc_symbol=="ILF2") |> group_by(COVERED) |> dplyr::count()
 nrow(mut.expr.df.any.mutant.covered|> filter(hgnc_symbol=="ILF2"))
 
 # Annotate Group ---------------------------------------------------------------
@@ -227,7 +227,7 @@ mut.expr.df <- mut.expr.df |>
 mut.expr.df |> 
   filter(hgnc_symbol=="ILF2") |>
   group_by(group) |>
-  count()
+  dplyr::count()
 
 mut.expr.df.any.mutant.covered <- mut.expr.df.any.mutant.covered |>
   filter(COVERED==TRUE) |>
@@ -253,8 +253,11 @@ nrow(mut.expr.df.any.mutant.covered |> filter(hgnc_symbol=="ILF2"))
 mut.expr.df.any.mutant.covered |> filter(hgnc_symbol=="ILF2") |> nrow()
 
 # Stats -------------------------------------------------------------------
+# major questions:
+# one sided vs two sided (here we want to test whether it correlates with increased expression)
+# 1 position or 2 positions?
+# MAF (low numbers) vs any subgroup (diluting signal)
 
-# 
 stats.any.ILF2 <- mut.expr.df.any.mutant.covered |> filter(hgnc_symbol=="ILF2") |> do(tidy(lm(vst_norm~ILF2_MUT+Gain1q, data=.)))
 stats.any.ILF2
 # # A tibble: 3 × 5
@@ -458,7 +461,7 @@ ggsave("../figures/commpass_volcano_within_tad_ilf2_mutant.pdf", volcano.within.
 
 
 # ILF2 higher expr Boxplot --------------------------------------------------------
-
+# Does ILF2 mutant correlate with higher expression of ILF2 gene? And Is that also true irrespective of gain1q status?
 ILF2.ILF2mut.Gain1q.Regression <- mut.expr.df.any.mutant.covered |>
   filter(hgnc_symbol=="ILF2") |>
   do(tidy(lm(vst_norm ~ ILF2_MUT+Gain1q, .)))
@@ -484,8 +487,30 @@ group.counts.ilf2.group <- mut.expr.df.any.mutant.covered |>
   filter(hgnc_symbol=="ILF2") |>
   mutate(group=factor(group, levels=c("ILF2 WT", "ILF2 MUT", "ILF2 WT\n+1q21.2", "ILF2 MUT\n+1q21.2"))) |>
   group_by(group) |>
-  count() |>
+  dplyr::count() |>
   mutate(label=paste0("N=", n))
+# # Groups:   group [4]
+# group                   n label
+# <fct>               <int> <chr>
+# 1 "ILF2 WT"             330 N=330
+# 2 "ILF2 MUT"             12 N=12 
+# 3 "ILF2 WT\n+1q21.2"    238 N=238
+# 4 "ILF2 MUT\n+1q21.2"     9 N=9  
+
+group.counts.ilf2.group
+
+mut.expr.df.any.mutant.covered  |>
+  filter(hgnc_symbol=="ILF2") |>
+  mutate(group=factor(group, levels=c("ILF2 WT", "ILF2 MUT", "ILF2 WT\n+1q21.2", "ILF2 MUT\n+1q21.2"))) |>
+  group_by(group) |>
+  summarise(median=median(vst_norm))
+# # A tibble: 4 × 2
+# group               median
+# <fct>                <dbl>
+# 1 "ILF2 WT"             12.3
+# 2 "ILF2 MUT"            12.5
+# 3 "ILF2 WT\n+1q21.2"    12.9
+# 4 "ILF2 MUT\n+1q21.2"   13.2
 
 boxplot.t.test.pairwise.ILF2.Gain1q <- mut.expr.df.any.mutant.covered |>
   filter(hgnc_symbol=="ILF2") |>
@@ -506,5 +531,6 @@ boxplot.t.test.pairwise.ILF2.Gain1q <- mut.expr.df.any.mutant.covered |>
   
   theme_bw(base_size = 6, base_line_size = 0.25, base_rect_size = 0.25) +
   theme(panel.grid = element_blank(), legend.position = "none")
+boxplot.t.test.pairwise.ILF2.Gain1q
 ggsave("../figures/commpass_ilf2_any_mutant_gain1q.pdf", plot=boxplot.t.test.pairwise.ILF2.Gain1q, width = 2, height = 1.5) 
  

@@ -60,7 +60,7 @@ head(nls.models.predictions)
 ribbon.palette <- brewer.pal(n=8, name = "Set1")[c(7, 5:1)]
 
 mutsig.plot <- ggplot(data = nls.models.predictions, mapping = aes(n_patients, color=Frequency)) + 
-  geom_jitter(aes(y=Drivers), width = 0, height = 0.5, alpha=0.2, size=0.5) +
+  geom_jitter(aes(y=Drivers), width = 0, height = 0.5, alpha=0.2, size=0.25, shape=20) +
   geom_ribbon(aes(ymin=fit.lwr, ymax=fit.upr, fill=Frequency), alpha=0.1, colour=NA) +
   geom_line(aes(y=fit.fit))+
   geom_line(aes(y=fit.lwr), alpha=0.3)+
@@ -69,17 +69,21 @@ mutsig.plot <- ggplot(data = nls.models.predictions, mapping = aes(n_patients, c
   scale_color_manual(values=ribbon.palette) +
   scale_fill_manual(values=ribbon.palette) +
   theme_bw() +
-  theme(legend.position = c(0.2, 0.7), panel.grid = element_blank())
+  theme(
+    # legend.position = c(0.2, 0.7), 
+    legend.position = "top", 
+        panel.grid = element_blank(), text = element_text(size=6), aspect.ratio = 1)
 
 mutsig.plot
-ggsave(plot=mutsig.plot, "../figures/figures_mutsig_saturation.png", width = 4, height = 3, scale = 1.2)
+ggsave(plot=mutsig.plot, "../figures/adjusted_figures_mutsig_saturation.pdf", 
+       width = 2, height = 3)
 
 # GISTIC ------------------------------------------------------------------
 
 gistic.basic <- read_table("../data/agg_basic_stat_gistic.tsv")
-
-# first when no driver at all n_patients is not reported
-gistic.basic <- gistic.basic |> mutate(n_patients = case_when(is.na(n_patients)~index+11, TRUE~n_patients))
+# 
+# # first when no driver at all n_patients is not reported
+# gistic.basic <- gistic.basic |> mutate(n_patients = case_when(is.na(n_patients)~index+11, TRUE~n_patients))
 
 # second n_over_1 is na
 gistic.basic <- gistic.basic |> mutate(across(starts_with("n_"), ~ pmax(0, .x, na.rm = TRUE) ))
@@ -96,7 +100,8 @@ long.gistic.analysis <- gistic.basic|>
                               "3-4%"="n_over_3", 
                               "4-5%"="n_over_4",
                               ">=5%"="n_over_5")) |>
-  mutate(Drivers.noised=Drivers+rnorm(length(Drivers), mean = 0, sd = .3))
+  # mutate(Frequency=case_when(Frequency=="<1%",))
+  mutate(Drivers.noised=Drivers+rnorm(length(Drivers), mean = 0, sd = .1))
 
 # GISTIC doesn't have rare events therefore doesn't converge :(
 # control=list(warnOnly=TRUE)
@@ -114,7 +119,7 @@ head(nls.models.gistic.predictions)
 ribbon.palette <- brewer.pal(n=8, name = "Set1")[c(7, 5:1)]
 
 gistic.plot <- ggplot(data = nls.models.gistic.predictions, mapping = aes(n_patients, color=Frequency)) + 
-  geom_jitter(aes(y=Drivers), width = 0, height = 0.5, alpha=0.2, size=0.5) +
+  geom_jitter(aes(y=Drivers), width = 0, height = 0.5, alpha=0.2, size=0.25, shape=20) +
   geom_ribbon(aes(ymin=fit.lwr, ymax=fit.upr, fill=Frequency), alpha=0.1, colour=NA) +
   geom_line(aes(y=fit.fit))+
   geom_line(aes(y=fit.lwr), alpha=0.3)+
@@ -123,8 +128,8 @@ gistic.plot <- ggplot(data = nls.models.gistic.predictions, mapping = aes(n_pati
   scale_color_manual(values=ribbon.palette) +
   scale_fill_manual(values=ribbon.palette) +
   theme_bw() +
-  theme(legend.position = c(0.2, 0.7), panel.grid = element_blank())
+  theme(legend.position = "top", panel.grid = element_blank(), aspect.ratio = 1, text = element_text(size=6))
 
 gistic.plot
 
-ggsave(plot=gistic.plot, "../figures/figures_gistic_saturation.png", width = 4, height = 3, scale = 1.2)
+ggsave(plot=gistic.plot, "../figures/adjusted_figures_gistic_saturation.pdf", width = 2, height = 3)

@@ -56,7 +56,7 @@ ilf2.muts.maf <- ilf2.muts |> filter(!startsWith(Participant_ID, "MMRF")) |> fil
 ilf2.muts.maf |> write_tsv("../data/ilf2.muts.maf")
 
 
-# How many patients -------------------------------------------------------
+# Fig 6b How many patients -------------------------------------------------------
 
 length(unique(ilf2.muts.maf$Participant_ID))
 sort(unique(ilf2.muts.maf$Participant_ID))
@@ -92,7 +92,6 @@ ilf2.muts.maf <- read_tsv("../data/ilf2.muts.maf")
 length(unique(ilf2.muts.maf$Tumor_Sample_Barcode))
 length(unique(ilf2.muts.maf$Participant_ID))
 
-
 mutations.ccf.from.su2c <- ilf2.muts.maf |>
   filter(Cohort!="MMRF") |>
   group_by(Start_position, Tumor_Seq_Allele2, Participant_ID, ccf_median) |>
@@ -115,7 +114,12 @@ mutations.ccf.from.su2c
 table( mutations.ccf.from.su2c$ccf_median > 0.85 )
 table( mutations.ccf.from.su2c$ccf_median > 0.85 )
 
-# CCF ---------------------------------------------------------------------
+# Fig 6c CCF ---------------------------------------------------------------------
+
+ilf2.muts.maf |>
+  filter(Start_position %in% c(153643723, 153643730)) |>
+  ungroup() |>
+  summarise(n=n(), median_ccf=median(ccf_hat), min=min(ccf_hat), max=max(ccf_hat))
 
 ilf2.ccf <- ilf2.muts.maf |>
   filter(Start_position %in% c(153643723, 153643730)) |>

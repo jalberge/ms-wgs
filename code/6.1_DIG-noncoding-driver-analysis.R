@@ -5,6 +5,7 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 library(data.table)
 library(tidyverse)
+library(patchwork)
 
 source("0_annotate_samples.R")
 
@@ -67,11 +68,12 @@ library(tictoc)
 # 2 sec for all elements on 100;000 mutations
 # 8 sec for all elements on 2E6 mutations
 
+
 tic()
 # nc.maf <- apply(nc.dig.results.bed[1,], 1, filter.maf, maf=maf.sbs)
 nc.maf <- pmap(nc.dig.results.bed, function(...){x=tibble(...);return(filter.maf(x, maf.sbs))}) |> list_rbind()
 toc()
-
+# RERUN FROM HERE
 
 # Add annotations for patients --------------------------------------------
 
@@ -82,8 +84,8 @@ meta.hdp <- meta %>%
   left_join(clinical.and.terra.ref.pairs.samples %>% select(HDP_Participant_ID, HDP_Reference_Pair, Participant_ID), by=c("Sample ID" = "Participant_ID")) %>%
   mutate(HDP_Participant_ID=ifelse(is.na(HDP_Participant_ID), `Sample ID`, HDP_Participant_ID))
 
-nc.maf <- nc.maf |> inner_join(meta.hdp, by=c("Participant_ID"="HDP_Participant_ID"))
-maf.sbs <- maf.sbs |> inner_join(meta.hdp, by=c("Participant_ID"="HDP_Participant_ID"))
+nc.maf <- nc.maf |> inner_join(meta.hdp, by=c("Participant_ID"="HDP_Participant_ID")) #not needed (safe break and save later)
+maf.sbs <- maf.sbs |> inner_join(meta.hdp, by=c("Participant_ID"="HDP_Participant_ID")) # need to re-run each time
 
 nc.maf |> filter(elt_gene_name=="WDR74") |> write_tsv("../data/review_wdr74_nc.tsv")
 
@@ -97,6 +99,8 @@ sbs.palette =
 sbs.order <- c("N9", "N12", "N16", "N18", "N19", "N20", "N13", "N15", "SBS8", 
                "SBS16", "SBS18", "SBS1", "SBS5", "SBS40", "SBS2", "SBS13", "SBS17a", 
                "SBS17b", "SBS9", "N17", "SBS85")
+
+# SAFE SKIP
 # signature
 nc.maf.sbs <- nc.maf |> 
   group_by(ELT, elt_chr, elt_start, elt_end, elt_group, elt_source, elt_gene_name, elt_identifier) |>
@@ -105,6 +109,8 @@ nc.maf.sbs <- nc.maf |>
   mutate(SBS=factor(SBS, levels=sbs.order))
 
 nc.maf.sbs |> write_tsv("../data/dig_input_sbs_20230314.tsv")
+
+# SAFE RERUN (doublecheck)
 nc.maf.sbs <-  read_tsv("../data/dig_input_sbs_20230314.tsv")
 
 axis.labels <- nc.maf.sbs |> 
@@ -126,7 +132,6 @@ sbs.nc <- ggplot(nc.maf.sbs, aes(weight, ELT, fill=SBS)) +
         axis.ticks.x = element_blank(),
         axis.text.x = element_blank(),
         axis.title.x = element_blank())
-
 # subset elts of interest in maf
 
 ggsave("../figures/sbs.nc.dig.png", width = 3, height = 4, scale=2)
@@ -274,9 +279,34 @@ ggsave("../figures/sbs.nc.dig.reg.only.pdf", width = 3, height = 4, scale=2)
 
 # Number of participants non coding ---------------------------------------
 
+length(unique(maf.sbs |> filter(!startsWith(Participant_ID, "MMRF")) |> pull(Participant_ID)))
 N_participants = maf.sbs |> filter(!startsWith(Participant_ID, "MMRF")) |> select(Participant_ID) |> distinct() |> ungroup() |> count()
+# N_participants: 177
 
 N_per_class <- maf.sbs |> filter(!startsWith(Participant_ID, "MMRF")) |> select(Participant_ID, IMWG) |> distinct() |> group_by(IMWG) |> count()
+N_per_class
+# # A tibble: 5 × 2
+# # Groups:   IMWG [5]
+# IMWG             n
+# <chr>        <int>
+# 1 Cyclin D        50
+# 2 Hyperdiploid    68
+# 3 MAF             33
+# 4 MMSET           13
+# 5 Unclassified    13
+
+N_per_risk <- maf.sbs |> 
+  filter(!startsWith(Participant_ID, "MMRF")) |> 
+  select(Participant_ID, StageAnd22020) |> distinct() |> group_by(StageAnd22020) |> count()
+# StageAnd22020     n
+# <chr>         <int>
+# 1 HRSMM            46
+# 2 IRSMM            28
+# 3 LRSMM            44
+# 4 MGUS             37
+# 5 MM               16
+# 6 NDMM              4
+# 7 SMM               2
 
 nc.frequencies <- nc.maf.final |> 
   filter(!startsWith(Participant_ID, "MMRF")) |>
@@ -285,6 +315,7 @@ nc.frequencies <- nc.maf.final |>
             N_mut_participants=length(unique(Participant_ID)),
             Frac_mut_participants=N_mut_participants/pull(N_participants, n))
 nc.frequencies$IMWG <- "Overall"
+nc.frequencies
 
 nc.frequencies.per.group <- nc.maf.final |> 
   filter(!startsWith(Participant_ID, "MMRF")) |>
@@ -299,6 +330,7 @@ nc.frequencies.global.and.per.group <- nc.frequencies.global.and.per.group |>
   mutate(IMWG = factor(IMWG, levels = c("Overall", "Unclassified", "Hyperdiploid", "Cyclin D", "MMSET", "MAF"))) |>
   mutate(Freq=cut(Frac_mut_participants, breaks = c(0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 1)))
 
+nc.frequencies.global.and.per.group |> write_tsv("../data/6.1.non-coding-frequencies-per-group-and-global.tsv")
 
 ## fig Overall -------------
 
@@ -324,6 +356,8 @@ plot.nc.overall.frequencies <- ggplot(nc.frequencies.global.and.per.group |> fil
         # axis.title.y = element_blank()
         ) +
   coord_equal()
+
+plot.nc.overall.frequencies
 
 ## fig Per subgroup ------------
 
@@ -354,7 +388,7 @@ ggplot(nc.frequencies.global.and.per.group |> filter(IMWG!="Overall"), aes(facto
         axis.title.y = element_blank()
         ) +
   coord_equal()
-
+plot.nc.group.frequencies
 
 # Add qvalues -------------------------------------------------------------
 
@@ -396,9 +430,17 @@ table(simple.b.hmach.maf$Tumor_Seq_Allele2, simple.b.hmach.maf$Reference_Allele)
 nc.b.maf <- pmap(nc.dig.results.bed |> filter(ELT %in% axis.labels$ELT), function(...){x=tibble(...);return(filter.maf(x, simple.b.hmach.maf))}) |> list_rbind()
 
 N_B_total <- simple.b.hmach.maf |> select(sample) |> distinct() |> count() |> pull(n)
+# N_B_total: 159
 N_B_memory_total <- simple.b.hmach.maf |> filter(Cell.type2=="Memory B") |> select(sample) |> distinct() |> count() |> pull(n)
-
+# N_B_memory_total: 74
 N_B_per_class <- simple.b.hmach.maf |> select(sample, Cell.type2) |> distinct() |> group_by(Cell.type2) |> count()
+# N_B_per_class
+# A tibble: 2 × 2
+# # Groups:   Cell.type2 [2]
+# Cell.type2     n
+# <chr>      <int>
+#   1 Memory B      74
+# 2 Naive B       85
 
 nc.b.frequencies <- nc.b.maf |> 
   ungroup() |>
@@ -407,6 +449,7 @@ nc.b.frequencies <- nc.b.maf |>
   summarise(N_mut_participants=length(unique(sample))) |>
   full_join(N_B_per_class) |>
   mutate(Frac_mut_participants=N_mut_participants/n)
+nc.b.frequencies
 
 # add missing values lost in joint
 nc.b.frequencies <- nc.b.frequencies |> 
@@ -422,7 +465,12 @@ nc.b.frequencies |> filter(Cell.type2=="Memory B") |>
   mutate(Recurrent = N_mut_participants  > 1) |>
   group_by(Recurrent) |>
   count()
-
+# A tibble: 2 × 2
+# # Groups:   Recurrent [2]
+# Recurrent     n
+# <lgl>     <int>
+#   1 FALSE        11
+# 2 TRUE         17
 nc.b.frequencies |>
   filter(Cell.type2=="Memory B" & N_mut_participants  > 1)
 
@@ -531,8 +579,6 @@ plot.nc.group.frequencies.for.final <- plot.nc.group.frequencies +
     axis.line.y = element_blank(),
     axis.title.y = element_blank()) 
 
-
-library(patchwork)
 
 final.non.coding.matrix <- nc.b.frequencies.plot + 
   plot.nc.overall.frequencies.for.final + 

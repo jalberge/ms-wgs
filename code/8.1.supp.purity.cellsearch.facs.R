@@ -23,13 +23,32 @@ table(st1$Assay)
 stats <- dunn_test(st1, `Purity (ABSOLUTE)`~Assay, p.adjust.method="bonferroni") %>% 
   add_xy_position(step.increase = 3) %>%
   mutate(p.adj=format(p.adj, digits=2))
+# > stats
+# # A tibble: 3 × 13
+# .y.               group1                        group2       n1    n2 statistic        p p.adj p.adj.signif y.position groups  xmin  xmax
+# <chr>             <chr>                         <chr>     <int> <int>     <dbl>    <dbl> <chr> <chr>             <dbl> <name> <dbl> <dbl>
+#   1 Purity (ABSOLUTE) "Bone marrow\nautoMACS (R)"   "Bone ma…    87    29      2.91 3.64e- 3 1.1e… *                  1.06 <chr>      1     2
+# 2 Purity (ABSOLUTE) "Bone marrow\nautoMACS (R)"   "Periphe…    87    42      8.53 1.45e-17 4.4e… ****               1.15 <chr>      1     3
+# 3 Purity (ABSOLUTE) "Bone marrow\nCellSearch (R)" "Periphe…    29    42      4.06 4.98e- 5 1.5e… ***                1.24 <chr>      2     3
 
+kruskal_test(st1, `Purity (ABSOLUTE)`~Assay)
+# # A tibble: 1 × 6
+# .y.                   n statistic    df        p method        
+# * <chr>             <int>     <dbl> <int>    <dbl> <chr>         
+#   1 Purity (ABSOLUTE)   158      73.0     2 1.39e-16 Kruskal-Wallis
 summary.stats = st1 |> 
   group_by(Assay) |>
   summarize(n=n(), 
             median=median(`Purity (ABSOLUTE)`), 
             mad=mad(`Purity (ABSOLUTE)`), 
             text=paste0("N = ", n, "\n", "med. ", scales::percent(median), "\nmad ", scales::percent(mad)))
+# > summary.stats
+# # A tibble: 3 × 5
+# Assay                                  n median    mad text                       
+# <chr>                              <int>  <dbl>  <dbl> <chr>                      
+#   1 "Bone marrow\nCellSearch (R)"         29   0.85 0.208  "N = 29\nmed. 85%\nmad 21%"
+# 2 "Bone marrow\nautoMACS (R)"           87   0.62 0.356  "N = 87\nmed. 62%\nmad 36%"
+# 3 "Peripheral Blood\nCellSearch (R)"    42   0.99 0.0148 "N = 42\nmed. 99%\nmad 1%" 
 
 fig.supp.cs.facs <- ggplot(st1, aes(Assay)) +
   geom_boxplot(aes(y=`Purity (ABSOLUTE)`, color=Assay)) +

@@ -20,7 +20,7 @@ _DEBUG = True
 
 WIC = WorkspaceInputConnector(WORKSPACE)
 
-samples_df = WIC.samples
+S = WIC.samples
 
 bucket = "gs://2-large-wgs/hg38-dbgap"
 
@@ -53,7 +53,7 @@ def reheader_workflow(bam, bai, walkup_id, sample_name, catissue, terra_sample=N
         bam_cloud_path = wolf.UploadToBucket(files=[reheadered_bam["bam"]], bucket=bucket)
         bai_cloud_path = wolf.UploadToBucket(files=[reheadered_bam["bai"]], bucket=bucket)
     if terra is not None:
-        terra_sync = wolf.fc.SyncToWorkspace(nameworkspace=terra,entity_type="sample",entity_name=terra_sample,attr_map={"hg38_dbgap_ready_bam":bam_cloud_path["cloud_path"], "hg38_dbgap_ready_bam":bai_cloud_path["cloud_path"]})
+        terra_sync = wolf.fc.SyncToWorkspace(nameworkspace=terra,entity_type="sample",entity_name=terra_sample,attr_map={"hg38_dbgap_ready_bam":bam_cloud_path["cloud_path"], "hg38_dbgap_ready_bai":bai_cloud_path["cloud_path"]})
     if not _DEBUG:
         wolf.localization.DeleteDisk(
             name="DeleteBam",
@@ -72,7 +72,7 @@ with wolf.Workflow(workflow=reheader_workflow) as w:
                 sample_name=s["dbgap_SAMPLE_ID"],
                 catissue=sample,
                 bam=s["hg38_analysis_ready_bam"],
-                bai=s["hg38_analysis_ready_bam_index"]
+                bai=s["hg38_analysis_ready_bam_index"],
                 terra_sample=sample,
                 terra=WORKSPACE,
                 bucket=bucket

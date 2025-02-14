@@ -903,3 +903,38 @@ pdf("../figures/FIG1_Mutations_with_class_stage_and_drivers.pdf", width = 6, hei
 draw(ht.list)
 dev.off()
 
+
+# Match back to dbGaP ids -------------------------------------------------
+
+CTF.dbGaP <- read_xlsx("~/Partners HealthCare Dropbox/Jean-Baptiste Alberge/Alberge et al 2024 MMap_raw data archive/CTF_PaperTableWithClinicalInfo.xlsx")
+SU2C.dbGaP <- read_xlsx("~/Partners HealthCare Dropbox/Jean-Baptiste Alberge/Alberge et al 2024 MMap_raw data archive/SU2C_caTissuePaperTableWithClinicalInfo.xlsx")
+
+CTF.dbGaP$MRN <- as.character(CTF.dbGaP$MRN)
+
+ClinicalInfo <- bind_rows(CTF.dbGaP, SU2C.dbGaP)
+
+# Patient column in Clinical Info matches Heatmap final.clean.sample
+convert.to.deidentified <- function(x, ClinicalInfo=NULL) { 
+  if(is.null(ClinicalInfo)) stop("Need a ClinicalInfo file!")
+  if(x %in% ClinicalInfo$Patient) {
+    # extract SCI ID if SCI, else extract CTF
+    SCI.candidate <- ClinicalInfo[ClinicalInfo$Patient==x,] %>% pull(SCI_ID)
+    if(!is.na(SCI.candidate)) {
+      SCI.candidate
+    } else {
+      CTF.candidate <- ClinicalInfo[ClinicalInfo$Patient==x,] %>% pull(CTF_ID)
+      if(!is.na(CTF.candidate)) {
+        CTF.candidate
+      } else {
+        stop("CTF and SCI IDs not found; but patient is in ClinicalInfo table.")
+      }
+    }
+  } else {
+    # don't touch patient ID
+    x
+  }
+}
+
+
+new.order
+

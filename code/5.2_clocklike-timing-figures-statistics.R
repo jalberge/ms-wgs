@@ -310,9 +310,23 @@ ggsave(plot = absolute.tumor.age, filename = "../figures/supp_timing_total.pdf",
 ## Boxplot MGUS/SMM/MM ------------------
 
 all.timing.groups |> kruskal_test(Tumor_Age~Disease_stage)
+# # A tibble: 1 × 6
+# .y.           n statistic    df       p method        
+# * <chr>     <int>     <dbl> <int>   <dbl> <chr>         
+#   1 Tumor_Age    91      11.0     2 0.00417 Kruskal-Wallis
 all.timing.groups |> dunn_test(Tumor_Age~Disease_stage)
+# .y.       group1 group2    n1    n2 statistic       p   p.adj p.adj.signif
+# * <chr>     <chr>  <chr>  <int> <int>     <dbl>   <dbl>   <dbl> <chr>       
+#   1 Tumor_Age MGUS   SMM       14    46      1.56 0.120   0.120   ns          
+# 2 Tumor_Age MGUS   MM        14    31      3.14 0.00170 0.00511 **          
+#   3 Tumor_Age SMM    MM        46    31      2.31 0.0211  0.0423  *   
 all.timing.groups |> group_by(Disease_stage) |> summarise(median=median(Tumor_Age))
-
+# # A tibble: 3 × 2
+# Disease_stage median
+# <fct>          <dbl>
+#   1 MGUS            16.2
+# 2 SMM             20.5
+# 3 MM              32.8
 p.vals.stage <- all.timing.groups |> dunn_test(Tumor_Age~Disease_stage) |> add_xy_position()
 
 boxplot.age.stage.tumor.age <- ggplot(all.timing.groups, aes(Disease_stage, Tumor_Age, color=Disease_stage)) +
@@ -353,6 +367,13 @@ tidy_model <- tidy(hrd.age.independent.model, conf.int = TRUE) |>
   mutate(# trim at 5 to make the graph readable
          conf.high=pmin(conf.high, 5))
 tidy_model
+# A tibble: 4 × 7
+# term                estimate std.error statistic p.value conf.low conf.high
+# <chr>                  <dbl>     <dbl>     <dbl>   <dbl>    <dbl>     <dbl>
+#   1 (Intercept)           0.0262     1.36    -2.67   0.00758 0.000866     0.245
+# 2 Tumor_Age_Decade      1.95       0.329    2.04   0.0415  1.08         4.11 
+# 3 Disease_StatusIRSMM   0.940      1.43    -0.0429 0.966   0.0530       5    
+# 4 Disease_StatusHRSMM   0.946      1.35    -0.0407 0.968   0.0692       5    
 
 #forest
 hrd.plot <- ggplot(tidy_model |> filter(term!="(Intercept)"), aes(x = estimate, y = term, color=p.value<0.05)) +
@@ -378,9 +399,21 @@ ggsave("../figures/hrd.age.independent.pdf", width = 3, height = 3)
 
 
 mgus.smm.timing.groups |> wilcox_test(Tumor_Age~Progression_status)
+# # A tibble: 1 × 7
+# .y.       group1 group2        n1    n2 statistic       p
+# * <chr>     <chr>  <chr>      <int> <int>     <dbl>   <dbl>
+#   1 Tumor_Age Stable Progressed    44    16       192 0.00677
 p.vals.progression <- mgus.smm.timing.groups |> dunn_test(Tumor_Age~Progression_status) |> add_xy_position()
+# A tibble: 1 × 13
+# .y.       group1 group2        n1    n2 statistic       p   p.adj p.adj.signif y.position groups        xmin  xmax
+# <chr>     <chr>  <chr>      <int> <int>     <dbl>   <dbl>   <dbl> <chr>             <dbl> <named list> <dbl> <dbl>
+#   1 Tumor_Age Stable Progressed    44    16      2.67 0.00748 0.00748 **                 61.4 <chr [2]>        1     2
 mgus.smm.timing.groups |> group_by(Progression_status) |> summarise(median=median(Tumor_Age))
-
+# # A tibble: 2 × 2
+# Progression_status median
+# <fct>               <dbl>
+#   1 Stable               15.4
+# 2 Progressed           29.6
 boxplot.age.progression.tumor.age <- ggplot(mgus.smm.timing.groups, aes(Progression_status, Tumor_Age, color=Progression_status)) +
   geom_boxplot() +
   geom_jitter(alpha=0.3) +

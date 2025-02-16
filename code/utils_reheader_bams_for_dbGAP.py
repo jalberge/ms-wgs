@@ -65,21 +65,21 @@ def reheader_workflow(bam, bai, walkup_id, sample_name, catissue, terra_sample=N
         bam_cloud_path = wolf.UploadToBucket(files=[reheadered_bam["bam"]], bucket=bucket)
         bai_cloud_path = wolf.UploadToBucket(files=[reheadered_bam["bai"]], bucket=bucket)
         
-    if terra is not None:
-        terra_sync = wolf.fc.SyncToWorkspace(nameworkspace=terra,
-                                             entity_type="sample",
-                                             entity_name=terra_sample,
-                                             attr_map={"hg38_dbgap_ready_bam":bam_cloud_path["cloud_path"],
-                                                       "hg38_dbgap_ready_bai":bai_cloud_path["cloud_path"],
-                                                       "hg38_idxstats":reheadered_bam["idxstats"]})
+        if terra is not None:
+            terra_sync = wolf.fc.SyncToWorkspace(nameworkspace=terra,
+                                                 entity_type="sample",
+                                                 entity_name=terra_sample,
+                                                 attr_map={"hg38_dbgap_ready_bam":bam_cloud_path["cloud_path"],
+                                                           "hg38_dbgap_ready_bai":bai_cloud_path["cloud_path"],
+                                                           "hg38_idxstats":reheadered_bam["idxstats"]})
 
-    if not _DEBUG:
-        wolf.localization.DeleteDisk(
-            name="DeleteBam",
-            inputs={
-                "disk": reheadered_bam["bam"],
-                "upstream": terra_sync if terra is not None else bam_cloud_path
-            })
+        if not _DEBUG:
+            wolf.localization.DeleteDisk(
+                name="DeleteBam",
+                inputs={
+                    "disk": reheadered_bam["bam"],
+                    "upstream": terra_sync if terra is not None else bam_cloud_path
+                })
     
     return terra_sync, bam_cloud_path, bai_cloud_path
 

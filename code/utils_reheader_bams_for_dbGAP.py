@@ -35,7 +35,9 @@ if _DEBUG:
 
 def reheader_workflow(bam, bai, walkup_id, sample_name, catissue, terra_sample=None, terra=None, bucket=None):
 
-    global terra_sync, bam_cloud_path, bai_cloud_path
+    terra_sync=None
+    bam_cloud_path=None
+    bai_cloud_path=None
 
     local_bam = LocalizeToDisk(files={"bam":bam, "bai":bai})
 

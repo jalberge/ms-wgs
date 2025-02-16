@@ -16,7 +16,7 @@ from wolf.fc import WorkspaceInputConnector, SyncToWorkspace
 
 WORKSPACE = "broad-getzlab-mm-germline-t/MM_WGS_SU2C_2021_10_15"
 
-_DEBUG = True
+_DEBUG = False
 
 WIC = WorkspaceInputConnector(WORKSPACE)
 
@@ -34,46 +34,57 @@ if _DEBUG:
 
 
 def reheader_workflow(bam, bai, walkup_id, sample_name, catissue, terra_sample=None, terra=None, bucket=None):
+
+    global terra_sync
+
     local_bam = LocalizeToDisk(files={"bam":bam, "bai":bai})
+
     reheadered_bam = wolf.Task(
             name="reheader",
             inputs={"bam":local_bam["bam"], "bai":local_bam["bai"], "walkup_id":walkup_id, "sample_name":sample_name, "catissue":catissue},
             script="""
             set -euxo pipefail
             out="${sample_name}.bam"
-            samtools reheader -c 'perl -pe "s/${catissue}/${walkup}/g"' $bam > $out
+            ln -s $bam bam.bam
+            ln -s $bai bam.bai
+            samtools reheader -c 'perl -pe "s/${catissue}/${walkup_id}/g"' bam.bam > $out
             samtools index -@7 -o $(basename ${out}).bai $out
+            rm bam.bam bam.bai
+            samtools idxstats $out > $(basename ${out}).idxstats
             """,
-            outputs={"bam":"*.bam","bai":"*.bai"},
+            outputs={"bam":"*.bam","bai":"*.bai", "idxstats":"*.idxstats"},
             docker=docker,
             resources={"mem": "1G", "cpus-per-task": "8"},
             use_scratch_disk=True
             )
+
     if bucket is not None:
         bam_cloud_path = wolf.UploadToBucket(files=[reheadered_bam["bam"]], bucket=bucket)
         bai_cloud_path = wolf.UploadToBucket(files=[reheadered_bam["bai"]], bucket=bucket)
-    if terra is not None:
-        terra_sync = wolf.fc.SyncToWorkspace(nameworkspace=terra,entity_type="sample",entity_name=terra_sample,attr_map={"hg38_dbgap_ready_bam":bam_cloud_path["cloud_path"], "hg38_dbgap_ready_bai":bai_cloud_path["cloud_path"]})
-    if not _DEBUG:
-        wolf.localization.DeleteDisk(
-            name="DeleteBam",
-            inputs={
-                "disk": reheadered_bam["bam"],
-                "upstream": Bucketed
-            })
+        
+        if terra is not None:
+            terra_sync = wolf.fc.SyncToWorkspace(nameworkspace=terra,entity_type="sample",entity_name=terra_sample,attr_map={"hg38_dbgap_ready_bam":bam_cloud_path["cloud_path"], "hg38_dbgap_ready_bai":bai_cloud_path["cloud_path"], "hg38_idxstats":reheadered_bam["idxstats"]})
+
+        if not _DEBUG:
+            wolf.localization.DeleteDisk(
+                name="DeleteBam",
+                inputs={
+                    "disk": reheadered_bam["bam"],
+                    "upstream": terra_sync if terra is not None else bam_cloud_path 
+                })
+    
     return terra_sync, bam_cloud_path, bai_cloud_path
 
 
 with wolf.Workflow(workflow=reheader_workflow) as w:
     for sample, s in S.iterrows():
         w.run(
-                run_name=sample,
+                run_name=s["dbgap_SAMPLE_ID"],
                 walkup_id=s["walkup_id"],
                 sample_name=s["dbgap_SAMPLE_ID"],
                 catissue=sample,
                 bam=s["hg38_analysis_ready_bam"],
                 bai=s["hg38_analysis_ready_bam_index"],
                 terra_sample=sample,
-                terra=WORKSPACE,
-                bucket=bucket
-                )
+                terra=WORKSPACE)
+

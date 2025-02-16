@@ -27,7 +27,7 @@ bucket = "gs://2-large-wgs/hg38-dbgap"
 docker="gcr.io/broad-getzlab-workflows/samtools@sha256:8074df347e20ca7f39646914eb9fcccde30a9ca85d4dd10b60fe99d5b78a223d"
 
 S = S.loc[~pd.isna(S["dbgap_SAMPLE_ID"])]
-#S = samples_df.loc[ ( samples_df.flowcell_name=="Ultra2_GS_11" ) & ( ~samples_df.hg38_analysis_ready_bam.isna() ) ]
+S = S.loc[pd.isna(S["hg38_dbgap_ready_bam"])]
 
 if _DEBUG:
     S = S.iloc[[0]]

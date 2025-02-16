@@ -60,11 +60,18 @@ def reheader_workflow(bam, bai, walkup_id, sample_name, catissue, terra_sample=N
 
     # doesn't make sense not to have a bucket set. should make mandatory?
     if bucket is not None:
+        # dividing because not sure how to grab specific [0, 1, ...] index without a name?
+        # do they come back in same order as sent?
         bam_cloud_path = wolf.UploadToBucket(files=[reheadered_bam["bam"]], bucket=bucket)
         bai_cloud_path = wolf.UploadToBucket(files=[reheadered_bam["bai"]], bucket=bucket)
         
     if terra is not None:
-        terra_sync = wolf.fc.SyncToWorkspace(nameworkspace=terra,entity_type="sample",entity_name=terra_sample,attr_map={"hg38_dbgap_ready_bam":bam_cloud_path["cloud_path"], "hg38_dbgap_ready_bai":bai_cloud_path["cloud_path"], "hg38_idxstats":reheadered_bam["idxstats"]})
+        terra_sync = wolf.fc.SyncToWorkspace(nameworkspace=terra,
+                                             entity_type="sample",
+                                             entity_name=terra_sample,
+                                             attr_map={"hg38_dbgap_ready_bam":bam_cloud_path["cloud_path"],
+                                                       "hg38_dbgap_ready_bai":bai_cloud_path["cloud_path"],
+                                                       "hg38_idxstats":reheadered_bam["idxstats"]})
 
     if not _DEBUG:
         wolf.localization.DeleteDisk(
